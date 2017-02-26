@@ -405,7 +405,7 @@ p.fontsize-lg {
   color: #1b4268 !important; }
 
 .color-light-blue {
-  color: #455b79 !important; }
+  color: #6280a9 !important; }
 
 .color-white {
   color: #fff !important; }
@@ -444,7 +444,9 @@ p.fontsize-lg {
   margin-bottom: 60px; }
 
 article {
-  margin-bottom: 30px; }
+  margin-bottom: 30px; 
+  background: #edf6ff;
+}
 
 .block:after {
   content: "";
@@ -452,7 +454,7 @@ article {
   clear: both; }
 
 #content {
-  padding: 70px 0 0;
+  padding: 80px 0 0;
   min-height: 300px; }
   #content > .container > .section:first-child, #content #main > .section:first-child, #content > .section:first-child {
     padding-top: 0; }
@@ -2202,7 +2204,7 @@ ul.filter-categories > li {
 .blog-posts .post-grid .post-action .btn {
   padding: 0 25px; }
 .blog-posts .post-full .post-image {
-  padding: 0; }
+  padding: 15px; }
 .blog-posts .post-full .post-content {
   padding: 20px 30px 15px;
   background: #edf6ff; }
@@ -2697,7 +2699,7 @@ ul.filter-categories > li {
       .callout-box.style1 .callout-box-wrapper.bg-blue {
         background: rgba(15, 37, 65, 0.95); }
         .callout-box.style1 .callout-box-wrapper.bg-blue .desc-sm {
-          color: #455b79; }
+          color: #6280a9; }
     .callout-box.style1 .callout-content-container:before {
       content: "";
       display: inline-block;
@@ -2941,9 +2943,10 @@ ul.filter-categories > li {
   color: #000;
   /*@include transition((height 0.4s ease 0s, opacity 0.3s ease 0s));*/ }
   #header.header-color-white {
-    color: #fff; }
-    #header.header-color-white .logo a {
-      color: #fff; }
+  }
+  #header.header-color-white .logo a {
+    color: #fff; 
+  }
   #header.header-sticky {
     position: fixed;
     background: rgba(255, 255, 255, 0.9);
@@ -3446,7 +3449,7 @@ ul.filter-categories > li {
 
 .mobile-nav {
   padding: 15px 20px 40px;
-  color: #455b79;
+  color: #6280a9;
   font-size: 1.0833em; }
   .mobile-nav li > a {
     display: block; }
@@ -5956,7 +5959,7 @@ ul.filter-categories > li {
       #footer.style3 .footer-wrapper .tags .tag, #footer.style3 .footer-wrapper .social-icons .social-icon i, #footer.style3 .footer-wrapper .btn.style4 {
         border-color: #4d4d4d; }
   #footer.style4 {
-    color: #455b79; }
+    color: #6280a9; }
     #footer.style4 .callout-box.style2 {
       background: #edf6ff; }
       #footer.style4 .callout-box.style2 .callout-text * {
@@ -5993,9 +5996,9 @@ ul.filter-categories > li {
           #footer.style4 .footer-wrapper .useful-links li:last-child {
             border-bottom: none; }
       #footer.style4 .footer-wrapper .social-icons .social-icon i {
-        color: #455b79; }
+        color: #6280a9; }
       #footer.style4 .footer-wrapper .tags .tag, #footer.style4 .footer-wrapper .social-icons .social-icon i, #footer.style4 .footer-wrapper .btn.style4 {
-        border-color: #455b79; }
+        border-color: #6280a9; }
 
 /* 6. Page Content ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* 6.1. Standard Pages ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
