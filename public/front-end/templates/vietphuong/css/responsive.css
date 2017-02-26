@@ -442,8 +442,7 @@
           -ms-transition: all 0.3s ease 0s;
           transition: all 0.3s ease 0s; }
       #header .header-top-nav > li:hover .fa {
-        color: #fff;
-        border-color: #fff; }
+      }
       #header .header-top-nav > li:last-child > a {
         padding-right: 0; }
     #header .header-top-nav .mini-cart {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Requests;
 use Auth;
@@ -149,7 +150,7 @@ class PagesController extends Controller
                 ->paginate(8);
             return view('category.pc',['data'=>$pc]);
         }
-        elseif ($cat == 'tin-tuc') {
+        elseif ($cat == 'giai-phap') {
             $new =  DB::table('news')
                     ->orderBy('created_at', 'desc')
                     ->paginate(3);
@@ -157,6 +158,12 @@ class PagesController extends Controller
              $all =  DB::table('news')
                     ->orderBy('created_at', 'desc')
                     ->paginate(5);
+
+            //         $rt = Route::currentRouteName();
+            // echo '<pre>';
+            // print_r(Route::current()->parameters());
+            // echo '</pre>';
+            // echo Route::getCurrentRoute()->getPath();    
             return view('category.news',['data'=>$new,'hot1'=>$top1,'all'=>$all]);
         } 
         // else{
