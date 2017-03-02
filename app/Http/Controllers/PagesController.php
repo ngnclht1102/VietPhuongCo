@@ -41,7 +41,7 @@ class PagesController extends Controller
 
         $news =  DB::table('news')
                     ->orderBy('created_at', 'desc')
-                    ->paginate(10);   
+                    ->paginate(6);   
 
     	return view('home',['news'=>$news,'mobile'=>$mobile,'laptop'=>$lap,'pc'=>$pc]);
     }
