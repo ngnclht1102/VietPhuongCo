@@ -39,7 +39,11 @@ class PagesController extends Controller
                 ->select('products.*','pro_details.cpu','pro_details.ram','pro_details.screen','pro_details.vga','pro_details.storage','pro_details.exten_memmory','pro_details.cam1','pro_details.cam2','pro_details.sim','pro_details.connect','pro_details.pin','pro_details.os','pro_details.note')
                 ->paginate(4);
 
-    	return view('home',['mobile'=>$mobile,'laptop'=>$lap,'pc'=>$pc]);
+        $news =  DB::table('news')
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(10);   
+
+    	return view('home',['news'=>$news,'mobile'=>$mobile,'laptop'=>$lap,'pc'=>$pc]);
     }
     public function addcart($id)
     {
@@ -153,18 +157,20 @@ class PagesController extends Controller
         elseif ($cat == 'giai-phap') {
             $new =  DB::table('news')
                     ->orderBy('created_at', 'desc')
-                    ->paginate(3);
-            $top1 = $new->shift();
-             $all =  DB::table('news')
-                    ->orderBy('created_at', 'desc')
+                    ->where('cat_id','=','22')
                     ->paginate(5);
+            $top1 = $new->shift();
+            $all = DB::table('news')
+                   ->orderBy('created_at', 'desc')
+                   ->where('cat_id','=','22')
+                   ->paginate(10);
 
             //         $rt = Route::currentRouteName();
             // echo '<pre>';
             // print_r(Route::current()->parameters());
             // echo '</pre>';
             // echo Route::getCurrentRoute()->getPath();    
-            return view('category.news',['data'=>$new,'hot1'=>$top1,'all'=>$all]);
+            return view('resolving',['data'=>$new,'hot1'=>$top1,'all'=>$all]);
         } 
         // else{
         //     return redirect()->route('index');
