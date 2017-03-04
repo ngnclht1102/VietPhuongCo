@@ -61,68 +61,23 @@
                             </ul>
                         </div>
                         <div class="box">
-                            <h4>Archives</h4>
+                            <h4>Chuyên mục</h4>
                             <div class="row">
                                 <div class="col-xs-6 col-sm-12 col-md-6">
                                     <ul class="arrow-circle hover-effect archives">
-                                        <li><a href="#">December 2014</a></li>
-                                        <li><a href="#">November 2014</a></li>
-                                        <li><a href="#">October 2014</a></li>
-                                        <li><a href="#">September 2014</a></li>
-                                        <li><a href="#">August 2014</a></li>
-                                        <li><a href="#">July 2014</a></li>
+                                        <li><a href="#">Giải pháp</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-xs-6 col-sm-12 col-md-6">
                                     <ul class="arrow-circle hover-effect archives">
-                                        <li><a href="#">June 2014</a></li>
-                                        <li><a href="#">May 2014</a></li>
-                                        <li><a href="#">April 2014</a></li>
-                                        <li><a href="#">March 2014</a></li>
-                                        <li><a href="#">February 2014</a></li>
-                                        <li><a href="#">January 2014</a></li>
+                                        <li><a href="#">Kiến thức chung</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="box">
-                            <h4>Twitter Feeds</h4>
-                            <div class="twitter-holder">
-                                <ul>
-                                    <li class="tweet">
-                                        <p class="tweet-text">
-                                            <a href="#">Miracle,</a> Etiam non mollis minaer roin or eme.
-                                        </p>
-                                        <a class="tweet-date" href="#">12 Nov, 2014</a>
-                                    </li>
-                                    <li class="tweet">
-                                        <p class="tweet-text">
-                                            <a href="#">Miracle,</a> Etiam non mollis minaer roin or eme.
-                                        </p>
-                                        <a class="tweet-date" href="#">12 Nov, 2014</a>
-                                    </li>
-                                    <li class="tweet">
-                                        <p class="tweet-text">
-                                            <a href="#">Miracle,</a> Etiam non mollis minaer roin or eme.
-                                        </p>
-                                        <a class="tweet-date" href="#">12 Nov, 2014</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <h4>Popular Tags</h4>
-                            <div class="tags">
-                                <a class="tag" href="#">masonry</a>
-                                <a class="tag" href="#">responsive</a>
-                                <a class="tag" href="#">Ecommerce</a>
-                                <a class="tag" href="#">retina</a>
-                                <a class="tag" href="#">multi-purpose</a>
-                                <a class="tag" href="#">blog posts</a>
-                                <a class="tag" href="#">web design</a>
-                                <a class="tag" href="#">wordpres</a>
-                                <a class="tag" href="#">mobile</a>
-                            </div>
+                            <h4>Từ khoá</h4>
+                            @include('modules.tags')
                         </div>
                     </div>
                 </div>
