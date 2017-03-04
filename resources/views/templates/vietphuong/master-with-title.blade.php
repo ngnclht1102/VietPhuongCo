@@ -7,7 +7,6 @@
                     <h1 class="entry-title">Việt Phương CO LTD</h1>
                 </div>
             </div>
-            @include('modules.breadcumb-vp')
         </div>
         <section id="content">
             @yield('content')
