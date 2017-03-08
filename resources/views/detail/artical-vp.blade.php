@@ -20,11 +20,13 @@
                                     
                                     <p>{!!$row->intro!!}</p>
                                     <div class="post-action">
-                                        <a href="{!!url('/tin-tuc/'.$row->id.'-'.$row->slug)!!}" class="btn btn-sm style3 post-read-more">Đọc tiếp...</a>
+                                        <a href="#" class="btn btn-sm style3 post-read-more">Đọc tiếp...</a>
                                     </div>
                                 </div>
                             </article>
-                            @endforeach                                            
+                            @endforeach                  
+  
+                            
                             <div class="post-pagination">
                                 {{ $all->links() }}
                             </div>
@@ -43,16 +45,11 @@
                             <h4>Bài viết nổi bật</h4>
                             <ul class="recent-posts">
                                 @foreach($data as $row)
-                                <li style="display: flex; padding-top: 15px; padding-bottom: 15px">
-                                    <a href="{!!url('/tin-tuc/'.$row->id.'-'.$row->slug)!!}">
-                                        <div class="recent-image">
-                                            <img style="max-width:none;" src="{!!url('/uploads/news/'.$row->images)!!}" alt="{!!$row->title!!}" width="100" height="100">
-                                        </div>
-                                        <div class="post-content">
-                                            <a class="post-title" href="{!!url('/tin-tuc/'.$row->id.'-'.$row->slug)!!}">{!!$row->title!!}</a>
-                                            <p class="post-meta">Đăng bởi <a href="#">{!!$row->author!!}</a> ngày {!!$row->created_at!!}</p>
-                                        </div>
-                                   </a>     
+                                <li>
+                                    <div class="post-content">
+                                        <a class="post-title" href="#">{!!$row->title!!}</a>
+                                        <p class="post-meta">{!!$row->intro!!}</p>
+                                    </div>
                                 </li>
                                 @endforeach
                             </ul>
@@ -62,12 +59,12 @@
                             <div class="row">
                                 <div class="col-xs-6 col-sm-12 col-md-6">
                                     <ul class="arrow-circle hover-effect archives">
-                                        <li><a href="{!!url('/giai-phap')!!}">Giải pháp</a></li>
+                                        <li><a href="#">Giải pháp</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-xs-6 col-sm-12 col-md-6">
                                     <ul class="arrow-circle hover-effect archives">
-                                        <li><a href="{!!url('/kien-thuc')!!}">Kiến thức chung</a></li>
+                                        <li><a href="#">Kiến thức chung</a></li>
                                     </ul>
                                 </div>
                             </div>

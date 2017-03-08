@@ -36,16 +36,16 @@
                                 <a href="{{url('/giai-phap')}}">Giải pháp</a>
                             </li>
                             <li class="menu-item {{(Request::path() == 'kien-thuc') ? 'active' : '' }}">
-                                <a href="#">Kiến thức</a>
+                                <a href="{{url('/kien-thuc')}}">Kiến thức</a>
                             </li>
-                            <li class="menu-item">
-                                <a href="#">Sản phẩm</a>
+                            <li class="menu-item {{(Request::path() == 'san-pham') ? 'active' : '' }}">
+                                <a href="{{url('/san-pham')}}">Sản phẩm</a>
                             </li>
-                            <li class="menu-item">
-                                <a href="#">Về chúng tôi</a>
+                            <li class="menu-item {{(Request::path() == 've-chung-toi') ? 'active' : '' }}">
+                                <a href="{{url('/ve-chung-toi')}}">Về chúng tôi</a>
                             </li>
-                            <li class="menu-item">
-                                <a href="#">Liên hệ</a>
+                            <li class="menu-item {{(Request::path() == 'lien-he') ? 'active' : '' }}">
+                                <a href="{{url('/lien-he')}}">Liên hệ</a>
                             </li>
                             
                         </ul>

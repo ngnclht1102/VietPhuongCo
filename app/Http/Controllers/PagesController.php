@@ -154,27 +154,29 @@ class PagesController extends Controller
                 ->paginate(8);
             return view('category.pc',['data'=>$pc]);
         }
+        
         elseif ($cat == 'giai-phap') {
             $new =  DB::table('news')
                     ->orderBy('created_at', 'desc')
                     ->where('cat_id','=','22')
                     ->paginate(5);
-            $top1 = $new->shift();
             $all = DB::table('news')
                    ->orderBy('created_at', 'desc')
                    ->where('cat_id','=','22')
-                   ->paginate(10);
-
-            //         $rt = Route::currentRouteName();
-            // echo '<pre>';
-            // print_r(Route::current()->parameters());
-            // echo '</pre>';
-            // echo Route::getCurrentRoute()->getPath();    
-            return view('resolving',['data'=>$new,'hot1'=>$top1,'all'=>$all]);
+                   ->paginate(10,['*'],'trang');
+            return view('resolving',['data'=>$new,'all'=>$all]);
+        } elseif ($cat == 'kien-thuc') {
+            $new =  DB::table('news')
+                    ->orderBy('created_at', 'desc')
+                    ->where('cat_id','=','23')
+                    ->paginate(5);
+            $all = DB::table('news')
+                   ->orderBy('created_at', 'desc')
+                   ->where('cat_id','=','23')
+                   ->paginate(10,['*'],'trang');
+            return view('resolving',['data'=>$new,'all'=>$all]);
         } 
-        // else{
-        //     return redirect()->route('index');
-        // }
+        
     }
     public function detail($cat,$id,$slug)
     {
