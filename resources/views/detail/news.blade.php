@@ -1,10 +1,10 @@
 @extends('templates.vietphuong.master-with-title')
 @section('content')
 <?php 
-    $items = DB::table('news')
+$items = DB::table('news')
     ->orderBy('created_at', 'desc')
     ->paginate(5); 
-  ?>
+?>
 <div class="container">
     <div class="row">
         <div id="main" class="col-md-8">

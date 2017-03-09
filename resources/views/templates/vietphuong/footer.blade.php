@@ -23,7 +23,7 @@ Chúng tôi cam kết đưa lại sự tiện nghi tốt nhất cho khách hàng
                                 <a href="#" class="social-icon"><i class="fa fa-google-plus has-circle" data-toggle="tooltip" data-placement="top" title="GooglePlus"></i></a>
                                 <a href="#" class="social-icon"><i class="fa fa-skype has-circle" data-toggle="tooltip" data-placement="top" title="Skype"></i></a>
                             </div>
-                            <a href="#" class="btn btn-sm style4">Liên hệ</a>
+                            <a href="{{url('/lien-he')}}" class="btn btn-sm style4">Liên hệ</a>
                             <a href="#" class="back-to-top"><span></span></a>
                         </div>
                     </div>
@@ -36,10 +36,9 @@ Chúng tôi cam kết đưa lại sự tiện nghi tốt nhất cho khách hàng
                             <ul class="nav nav-pills">
                                 <li><a href="{{url('/trang-chu')}}">Trang chủ</a></li>
                                 <li><a href="{{url('/giai-phap')}}">Giải pháp</a></li>
-                                <li><a href="#">Kiến thức</a></li>
-                                <li><a href="#">Sản phẩm</a></li>
-                                <li><a href="#">Về chúng tôi</a></li>
-                                <li><a href="#">Liên hệ</a></li>
+                                <li><a href="{{url('/kien-thuc')}}">Kiến thức</a></li>
+                                <li><a href="{{url('/san-pham')}}">Sản phẩm</a></li>
+                                <li><a href="{{url('/lien-he')}}">Liên hệ</a></li>
                             </ul>
                         </nav>
                         <div class="copyright">
