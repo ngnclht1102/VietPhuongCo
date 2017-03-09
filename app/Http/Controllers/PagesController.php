@@ -145,7 +145,7 @@ class PagesController extends Controller
             return view('category.laptop',['data'=>$lap]);
         }
         elseif ($cat == 'pc') {
-            // mobile
+        // mobile
         $pc = DB::table('products')
                 ->join('category', 'products.cat_id', '=', 'category.id')
                 ->join('pro_details', 'pro_details.pro_id', '=', 'products.id')
@@ -153,6 +153,15 @@ class PagesController extends Controller
                 ->select('products.*','pro_details.cpu','pro_details.ram','pro_details.screen','pro_details.vga','pro_details.storage','pro_details.exten_memmory','pro_details.cam1','pro_details.cam2','pro_details.sim','pro_details.connect','pro_details.pin','pro_details.os','pro_details.note')
                 ->paginate(8);
             return view('category.pc',['data'=>$pc]);
+        }
+
+        elseif ($cat == 'san-pham') {
+            $products = DB::table('products')
+                ->join('category', 'products.cat_id', '=', 'category.id')
+                ->join('pro_details', 'pro_details.pro_id', '=', 'products.id')
+                ->select('products.*','pro_details.cpu','pro_details.ram','pro_details.screen','pro_details.vga','pro_details.storage','pro_details.exten_memmory','pro_details.cam1','pro_details.cam2','pro_details.sim','pro_details.connect','pro_details.pin','pro_details.os','pro_details.note')
+                ->paginate(12);
+            return view('product',['data'=>$products]);
         }
         
         elseif ($cat == 'giai-phap') {
@@ -205,6 +214,14 @@ class PagesController extends Controller
                 return redirect()->route('index');
             } else {
                 return view ('detail.pc',['data'=>$pc,'slug'=>$slug]);
+            }
+        } 
+        elseif ($cat =='san-pham') {            
+            $pc = Products::where('id',$id)->first();
+            if (empty($pc)) {
+                return redirect()->route('index');
+            } else {
+                return view ('product-detail',['data'=>$pc,'slug'=>$slug]);
             }
         } else {
             return redirect()->route('index');
