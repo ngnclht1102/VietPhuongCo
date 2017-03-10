@@ -50,27 +50,26 @@ $newProduct = DB::table('products')
                                 </div>
                             </form>
                         </div>
+                        <?php 
+                        $productTypes = DB::table('product_types')->get();
+                        $categories = DB::table('category')
+                                ->orderBy('category.name', 'desc')
+                                ->get(); 
+
+                        ?>
                         <div class="widget box">
                             <h4>Danh mục sản phẩm</h4>
                             <ul class="filter-categories panel-group">
+                                @foreach($productTypes as $type)
                                 <li class="category-has-children">
-                                    <a href="#cat-sweaters-jackets" data-toggle="collapse">Sweaters &amp; Jackets</a>
-                                    <ul id="cat-sweaters-jackets" class="collapse">
-                                        <li><a href="#">Mini Dresses</a></li>
+                                    <a href="#{!!$type->slug!!}" data-toggle="collapse">{!!$type->name!!}</a>
+                                    <ul id="{!!$type->slug!!}" class="collapse">
+                                        @foreach($categories as $category)
+                                        <li><a href="{!!url('/tim-san-pham/'.$type->id.'-'.$category->id.'-'.$type->slug.'-'.$category->slug)!!}">{!!$category->name!!}</a></li>
+                                        @endforeach        
                                     </ul>
                                 </li>
-                                <li class="category-has-children">
-                                    <a href="#cat-all-dresses" class="active" data-toggle="collapse">All Dresses</a>
-                                    <ul id="cat-all-dresses" class="collapse in">
-                                        <li><a href="#">Mini Dresses</a></li>
-                                        <li><a href="#">Evening Dresses</a></li>
-                                        <li><a href="#">Causual Dresses</a></li>
-                                        <li><a href="#">Party Dresses</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Pants &amp; Jeans</a></li>
-                                <li><a href="#">Winter Skirts</a></li>
-                                <li><a href="#">Shirts &amp; Blouses</a></li>
+                                @endforeach
                             </ul>
                         </div>
 
