@@ -9,9 +9,6 @@
                     </div>
                     <nav id="nav">
                         <ul class="header-top-nav">
-                            <li class="mini-cart menu-item">
-                                <a href="#"><i class="fa fa-shopping-cart has-circle"></i></a>
-                            </li>
                             <li class="mini-search">
                                 <a href="#"><i class="fa fa-search has-circle"></i></a>
                                 <div class="main-nav-search-form">

@@ -15,13 +15,6 @@
                         </div>
                         <span class="product-price box"><strong>{!!number_format($data->price) !!}</strong><span class="currency-symbol"> VND</span></span>
                         <p>{!!$data->r_intro!!}</p>
-                        <form class="variations-form cart">
-                            <div class="single-variation-wrap">
-                                <div class="variation-action">
-                                    <a href="#" class="btn btn-medium style1"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
                 <div class="woocommerce-tabs tab-container vertical-tab clearfix box">
@@ -57,7 +50,6 @@
                             <span class="product-price"><strong>{!!number_format($row->price) !!}</strong><span class="currency-symbol"> VND</span></span>
                         </div>
                         <div class="product-action">
-                            <a href="{!!url('gio-hang/addcart/'.$row->id)!!}" class="btn btn-add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                             <a href="{!!url('san-pham/'.$row->id.'-'.$row->slug)!!}" class="btn btn-add-to-cart" style="float: right">Chi tiết</a>
                         </div>
                     </li>

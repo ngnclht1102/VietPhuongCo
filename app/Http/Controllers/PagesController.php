@@ -155,6 +155,10 @@ class PagesController extends Controller
             return view('category.pc',['data'=>$pc]);
         }
 
+        elseif ($cat == 'lien-he') {            
+            return view('contact');
+        }
+
         elseif ($cat == 'san-pham') {
             $products = DB::table('products')
                 ->join('category', 'products.cat_id', '=', 'category.id')
