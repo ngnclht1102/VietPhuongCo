@@ -6,34 +6,9 @@
             <div class="product type-product">
                 <div class="row single-product-details">
                     <div class="product-images col-sm-5 box-lg">
-                        <div id="sync1" class="owl-carousel images owl-theme" style="opacity: 1; display: block;">
-                            <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3410px; left: 0px; display: block;"><div class="owl-item" style="width: 341px;"><div class="item easyzoom easyzoom--overlay is-ready">
-                                <a href="http://placehold.it/1132x1296"><img src="http://placehold.it/566x648" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 341px;"><div class="item easyzoom easyzoom--overlay">
-                                <a href="http://placehold.it/1132x1296"><img src="http://placehold.it/566x648" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 341px;"><div class="item easyzoom easyzoom--overlay">
-                                <a href="http://placehold.it/1132x1296"><img src="http://placehold.it/566x648" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 341px;"><div class="item easyzoom easyzoom--overlay">
-                                <a href="http://placehold.it/1132x1296"><img src="http://placehold.it/566x648" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 341px;"><div class="item easyzoom easyzoom--overlay">
-                                <a href="http://placehold.it/1132x1296"><img src="http://placehold.it/566x648" alt=""></a>
-                            </div></div></div></div>
-                            
-                        </div>
-                        <div id="sync2" class="owl-carousel post-slider style3 thumbnails owl-theme multiple-items" data-items="4" style="opacity: 1; display: block;">
-                            <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 720px; left: 0px; display: block;"><div class="owl-item synced" style="width: 72px; height: 22px;"><div class="item">
-                                <a href="#"><img src="http://placehold.it/154x185" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 72px; height: 22px;"><div class="item">
-                                <a href="#"><img src="http://placehold.it/154x185" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 72px; height: 22px;"><div class="item">
-                                <a href="#"><img src="http://placehold.it/154x185" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 72px; height: 22px;"><div class="item">
-                                <a href="#"><img src="http://placehold.it/154x185" alt=""></a>
-                            </div></div><div class="owl-item" style="width: 72px; height: 22px;"><div class="item">
-                                <a href="#"><img src="http://placehold.it/154x185" alt=""></a>
-                            </div></div></div></div>
-                        <div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"></div><div class="owl-next"></div></div></div></div>
+                        <img src="{!!url('/uploads/products/'.$data->images)!!}" alt="">
                     </div>
+
                     <div class="summary entry-summary col-sm-7 box-lg">
                         <div class="clearfix">
                             <h2 class="product-title entry-title">{!!$data->name!!}</h2>
