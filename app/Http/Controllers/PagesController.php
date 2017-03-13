@@ -12,6 +12,7 @@ use App\Category;
 use App\Pro_detail;
 use App\News;
 use App\Oders;
+use App\Contacts;
 use App\Oders_detail;
 use DB,Cart,Datetime;
 
@@ -91,6 +92,37 @@ class PagesController extends Controller
             ->with('slug','Xác nhận');
         }        
     }
+    
+    public function lienhe(Request $rq)
+    {
+         $this->validate($rq, [
+            'name' => 'required|max:255',
+            'note' => 'required',
+            'email' => 'required|email',
+        ], $this->messagesContact());
+
+
+        $contact = new Contacts();
+        $contact->email = $rq->email;
+        $contact->name = $rq->name;
+        $contact->note = $rq->note;
+        $contact->save();
+        
+        return redirect()->route('lienhe')
+        ->with(['flash_level'=>'result_msg','flash_massage'=>' Thành công. Cám ơn bạn đã gửi thông tin, chúng tôi sẽ liên hệ bạn trong thời gian sớm nhất!']);    
+        
+    }
+    public function messagesContact()
+    {
+        return [
+            'name.required' => 'Vui lòng nhập họ và tên',
+            'name.max' => 'Vui lòng nhập họ và tên hợp lệ. (Dưới 255 ký tự)',
+            'email.required' => 'Vui lòng nhập email',
+            'email.email' => 'Địa chỉ email không hợp lệ',
+            'note.required'  => 'Vui lòng nhập nội dung',
+        ];
+    }
+
     public function postoder(Request $rq)
     {
         $oder = new Oders();
@@ -153,6 +185,10 @@ class PagesController extends Controller
                 ->select('products.*','pro_details.cpu','pro_details.ram','pro_details.screen','pro_details.vga','pro_details.storage','pro_details.exten_memmory','pro_details.cam1','pro_details.cam2','pro_details.sim','pro_details.connect','pro_details.pin','pro_details.os','pro_details.note')
                 ->paginate(8);
             return view('category.pc',['data'=>$pc]);
+        }
+
+        elseif ($cat == 'lien-he') {            
+            return view('contact');
         }
 
         elseif ($cat == 'san-pham') {
@@ -227,4 +263,6 @@ class PagesController extends Controller
             return redirect()->route('index');
         }
     }
+
+    
 }

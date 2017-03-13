@@ -30,7 +30,6 @@ $newProduct = DB::table('products')
                                     <span class="product-price"><strong>{!!number_format($row->price) !!}</strong><span class="currency-symbol"> VND</span></span>
                                 </div>
                                 <div class="product-action">
-                                    <a href="{!!url('gio-hang/addcart/'.$row->id)!!}" class="btn btn-add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                     <a href="{!!url('san-pham/'.$row->id.'-'.$row->slug)!!}" class="btn btn-add-to-cart" style="float: right">Chi tiết</a>
                                 </div>
                             </li>
