@@ -18,7 +18,7 @@ $items = DB::table('news')
                         <br>
                         <span style="font-size:10px;color:#bdc3c7;">Đăng ngày: {!!$data->updated_at!!} </span>
                     </p>
-                    {!!$data->intro!!}
+                    <div>{!!$data->intro!!}</div>
                     <div class="image-container">
                         <a href="#"><img alt="{!!$data->images!!}" src="{!!url('uploads/news/'.$data->images)!!}"></a>
                     </div>
@@ -26,8 +26,6 @@ $items = DB::table('news')
                 <div class="post-content">
                     {!!$data->full!!}
                 </div>
-                
-
                 <h3 class="font-normal">Bài viết tương tự</h3>
                 <div class="related-posts clearfix box-sm same-height">
                     @foreach($items as $row)
@@ -47,7 +45,6 @@ $items = DB::table('news')
                     </div>
                     @endforeach 
                 </div>
-                
             </article>
         </div>
         <div class="sidebar col-md-4">                        

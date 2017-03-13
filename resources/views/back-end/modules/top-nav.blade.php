@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{!!url('/admin/home')!!}"><span>Trang Quản Trị</span> SHOP </a>
+				<a class="navbar-brand" href="{!!url('/admin/home')!!}"><span>Việt</span>Phương</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
@@ -16,7 +16,6 @@
                                 {!!Auth::guard('admin')->user()->name!!}
                             @endif <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="{{ url('admin/cat') }}"><i class="fa fa-btn fa-sign-out"></i>Thông tin</a></li>
                             <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 						</ul>
 					</li>
