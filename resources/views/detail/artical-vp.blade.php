@@ -18,7 +18,7 @@
                                 <div class="post-content col-md-7" style="min-height: 245px;">
                                     <h3 class="post-title"><a href="{!!url('/tin-tuc/'.$row->id.'-'.$row->slug)!!}">{!!$row->title!!}</a></h3>
                                     
-                                    <p>{!!$row->intro!!}</p>
+                                    <div>{!!$row->intro!!}</div>
                                     <div class="post-action">
                                         <a href="#" class="btn btn-sm style3 post-read-more">Đọc tiếp...</a>
                                     </div>

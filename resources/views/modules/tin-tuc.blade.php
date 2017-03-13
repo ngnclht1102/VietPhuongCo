@@ -12,9 +12,9 @@
   </div>
   <div class="col-lg-8">
     <h4><a href="{!!url('/tin-tuc/'.$row->id.'-'.$row->slug)!!}" title="{!!$row->title!!}">{!!$row->title!!}</a></h4>
-    <p> 
+    <div> 
       {!!$row->intro!!}
-    </p>
+    </div>
     <p><strong>Lúc :</strong>{!!$row->created_at!!} Bởi : <strong> {!!$row->author!!}</strong></p>
   </div>
 </div>
