@@ -25,9 +25,12 @@ Route::get('gio-hang/xoa', ['as'  => 'getempty', 'uses' =>'PagesController@xoa']
 // tien hanh dat hang
 Route::get('dat-hang', ['as'  => 'getoder', 'uses' =>'PagesController@getoder']);
 Route::post('dat-hang', ['as'  => 'postoder', 'uses' =>'PagesController@postoder']);
+
 // category
 Route::get('/{cat}', ['as'  => 'getcate', 'uses' =>'PagesController@getcate']);
 Route::get('/{cat}/{id}-{slug}', ['as'  => 'getdetail', 'uses' =>'PagesController@detail']);
+
+Route::post('/lien-he', ['as'  => 'lienhe', 'uses' =>'PagesController@lienhe']);
 
 Route::resource('payment', 'PayMentController');
 

@@ -12,6 +12,7 @@ use App\Category;
 use App\Pro_detail;
 use App\News;
 use App\Oders;
+use App\Contacts;
 use App\Oders_detail;
 use DB,Cart,Datetime;
 
@@ -91,6 +92,37 @@ class PagesController extends Controller
             ->with('slug','Xác nhận');
         }        
     }
+    
+    public function lienhe(Request $rq)
+    {
+         $this->validate($rq, [
+            'name' => 'required|max:255',
+            'note' => 'required',
+            'email' => 'required|email',
+        ], $this->messagesContact());
+
+
+        $contact = new Contacts();
+        $contact->email = $rq->email;
+        $contact->name = $rq->name;
+        $contact->note = $rq->note;
+        $contact->save();
+        
+        return redirect()->route('lienhe')
+        ->with(['flash_level'=>'result_msg','flash_massage'=>' Thành công. Cám ơn bạn đã gửi thông tin, chúng tôi sẽ liên hệ bạn trong thời gian sớm nhất!']);    
+        
+    }
+    public function messagesContact()
+    {
+        return [
+            'name.required' => 'Vui lòng nhập họ và tên',
+            'name.max' => 'Vui lòng nhập họ và tên hợp lệ. (Dưới 255 ký tự)',
+            'email.required' => 'Vui lòng nhập email',
+            'email.email' => 'Địa chỉ email không hợp lệ',
+            'note.required'  => 'Vui lòng nhập nội dung',
+        ];
+    }
+
     public function postoder(Request $rq)
     {
         $oder = new Oders();
@@ -231,4 +263,6 @@ class PagesController extends Controller
             return redirect()->route('index');
         }
     }
+
+    
 }
