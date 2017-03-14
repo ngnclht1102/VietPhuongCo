@@ -10,6 +10,8 @@ use App\Http\Requests;
 use App\News;
 use App\Category;
 use Auth;
+use App\Detail_img;
+
 use DateTime,File,Input,DB;
 
 class NewsController extends Controller
@@ -85,5 +87,16 @@ class NewsController extends Controller
     	$n->save();
     	return redirect('admin/news')
       	->with(['flash_level'=>'result_msg','flash_massage'=>' Đã sửa thành công !']);
+    }
+	public function getdel($id)
+    {
+    	$news = News::find($id);
+		if($news->images) {
+			$file = public_path('uploads/news/').$news->images; 
+			unlink($file);
+		}
+        $news->delete();
+        return redirect('admin/news')
+         ->with(['flash_level'=>'result_msg','flash_massage'=>'Đã xóa !']);
     }
 }
