@@ -28,21 +28,10 @@ class ProductsController extends Controller
             return view('back-end.products.list',['data'=>$pro,'cat'=>$cat,'loai'=>0]);
         }		
 	}
-    public function getadd($id)
+    public function getadd()
     {
-        $loai = Category::where('id',$id)->first();
-        $p_id = $loai->parent_id;
-        $p_name = Category::where('id',$p_id)->first();
-		$cat= Category::where('parent_id',$p_id)->get();
-		$pro = Products::all();	
-        if ($p_id >=19) {
-                return view('back-end.products.pc-add',['data'=>$pro,'cat'=>$cat,'loai'=>$p_name->name]);
-            }
-        else {
-            return view('back-end.products.add',['data'=>$pro,'cat'=>$cat,'loai'=>$p_name->name]);
-        }	
-		
-		
+		$cat= Category::where('type',1)->get();
+		return view('back-end.products.add',['data'=>[],'cat'=>$cat,'loai'=>'nam nam']);
     }
     public function postadd(AddProductsRequest $rq)
     {

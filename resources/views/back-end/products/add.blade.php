@@ -52,24 +52,7 @@
 				      			<label for="input-id">Điểm nổi bật</label>
 				      			<input type="text" name="txtintro" id="inputTxtintro" class="form-control" value="{{ old('txtintro') }}" required="required">
 				      		</div>
-				      		<div class="form-group">
-				      			<label for="input-id">Gồm có : </label>
-				      			<input type="text" name="txtpacket" id="inputtxtpacket" value="{{ old('txtpacket') }}" class="form-control" >
-				      		</div>
-				      		<div class="form-group">
-				      			<label for="input-id">Khuyễn mãi (tối đa 3 mục)</label>
-				      			<div class="row">
-					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				khuyễn mại 1 : <input type="text" name="txtpromo1" id="inputtxtpromo1" value="{{ old('txtpromo1') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				khuyễn mại 2 : <input type="text" name="txtpromo2" id="inputtxtpromo2" value="{{ old('txtpromo2') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				khuyễn mại 3 : <input type="text" name="txtpromo3" id="inputtxtpromo3" value="{{ old('txtpromo3') }}" class="form-control" >
-					      			</div>
-					      		</div>				      			
-				      		</div>
+				      		
 				      		<div class="form-group">				      			
 				      			<div class="row">
 					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -78,66 +61,9 @@
 					      			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
 					      				Giá bán : <input type="number" name="txtprice" id="inputtxtprice" class="form-control" value="{{ old('txtprice') }}" required="required">
 					      			</div>
-					      			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					      				Tag : <input type="text" name="txttag" id="inputtag" value="{{ old('txttag') }}" class="form-control">
-					      			</div>
 					      		</div>				      			
 				      		</div>
-				      		<div class="form-group">
-				      			<label for="input-id"> Chi tiết cấu hình sản phẩm</label>
-				      			<div class="row">
-					      			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					      				Cpu : <input type="text" name="txtCpu" id="inputtxtCpu" value="{{ old('txtCpu') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-					      				RAM : <input type="text" name="txtRam" id="inputtxtRam" value="{{ old('txtRam') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					      				Bộ nhớ trong (HDD) : <input type="text" name="txtStorage" id="inputtxtStorage" value="{{ old('txtStorage') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1" style="padding-left: 0;">	
-					      				Thẻ nhớ	<input type="text" name="txtExtend" id="inputtxtExtend" value="{{ old('txtExtend') }}" class="form-control">
-					      			</div>
-					      		</div>
-					      		<div class="row">
-					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				Màn hình : <input type="text" name="txtScreen" id="inputtxtscreen" value="{{ old('txtScreen') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				VGA : <input type="text" name="txtVga" id="inputtxtVga" value="{{ old('txtVga') }}" class="form-control">
-					      			</div>
-					      			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-					      				Webcam - Cam sau <input type="text" name="txtCam1" id="inputtxtCam1" value="{{ old('txtCam1') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-					      				Cammera trước <input type="text" name="txtCam2" id="inputtxtCam2" value="{{ old('txtCam2') }}" class="form-control" >
-					      			</div>
-					      		</div>
-					      		<div class="row">
-					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				SIM hỗ trợ : <input type="text" name="txtSIM" id="inputtxtSIM" value="{{ old('txtSIM') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				Kết nối : <input type="text" name="txtConnect" id="inputtxtConnect" value="{{ old('txtConnect') }}" class="form-control">
-					      			</div>
-					      			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-					      				PIN : <input type="text" name="txtPin" id="inputtxtPin" value="{{ old('txtPin') }}" class="form-control" >
-					      			</div>
-					      			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-					      				Hệ điều hành : <input type="text" name="txtOs" id="inputtxtOs" value="{{ old('txtOs') }}" class="form-control" >
-					      			</div>
-					      		</div>				      			
-				      		</div>
-				      		<div class="form-group">
-				      			<label for="input-id">Đánh giá chi tiết sản phẩm</label>
-				      			<div class="row">
-					      			@for( $i=1; $i<=12; $i++)
-					      			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-					      				Hình ảnh {!!$i!!} : <input type="file" name="txtdetail_img[]" value="{{ old('txtdetail_img[]') }}" accept="image/png" id="inputtxtdetail_img" class="form-control">
-					      			</div>
-					      			@endfor
-					      		</div>				      			
-				      		</div>
+
 				      		<div class="form-group">
 				      			<label for="input-id">Đánh giá chi tiết sản phẩm</label>
 				      			<div class="row">					      			

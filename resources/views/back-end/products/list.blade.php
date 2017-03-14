@@ -28,17 +28,10 @@
 									    };
 									</script>
 								</div>
-								<div class="col-md-3">
-									<input type="search" name="txttk" id="inputTxttk" class="form-control" value="" placeholder="Tìm sản phẩm..." required="required" title="">
-								</div>
 							</div>
-								
-								
 							</div>
 							<div class="col-md-2">
-								@if ($loai !='all')
-									<a href="{!!url('admin/sanpham/'.$loai.'/add')!!}" title=""><button type="button" class="btn btn-primary pull-right">Thêm Mới Sản Phẩm</button></a>
-								@endif
+								<a href="{!!url('admin/sanpham/add')!!}" title=""><button type="button" class="btn btn-primary pull-right">Thêm Mới Sản Phẩm</button></a>
 							</div>
 						</div> 
 						
