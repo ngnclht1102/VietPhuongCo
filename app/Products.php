@@ -9,6 +9,11 @@ class Products extends Model
    	protected $table ='products';
 	protected $guarded =[];
 
+    public function product_type()
+	{
+		return $this->belongsTo('App\ProductType','product_type');
+	}
+
 	public function category()
 	{
 		return $this->belongsTo('App\Category','cat_id');

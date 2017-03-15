@@ -26,7 +26,6 @@ class EditProductsRequest extends Request
         return [
             'sltCate' => 'required',
             'txtname'=>'required',
-            'txtintro'=>'required',
             'txtprice'=>'required'
         ];
     }
@@ -35,7 +34,6 @@ class EditProductsRequest extends Request
         return [
             'sltCate.required' => ' Hãy chọn một thương hiệu',
             'txtname.required' => ' Hãy nhập tên sản phẩm',
-            'txtintro.required' => ' Hãy nhập tóm tắt chức năng cho sản phẩm',
             'txtprice.required' => ' Hãy nhập giá cho sản phẩm'
             
         ];
