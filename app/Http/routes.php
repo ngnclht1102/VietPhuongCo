@@ -60,8 +60,8 @@ Route::group(['middleware' => 'admin'], function () {
            Route::get('/{loai}',['as'       =>'getpro','uses' => 'ProductsController@getlist']);
            Route::get('/del/{id}',['as'   =>'getdellpro','uses' => 'ProductsController@getdel'])->where('id','[0-9]+');
            
-           Route::get('/{loai}/edit/{id}',['as'  =>'geteditpro','uses' => 'ProductsController@getedit'])->where('id','[0-9]+');
-           Route::post('/{loai}/edit/{id}',['as' =>'posteditpro','uses' => 'ProductsController@postedit'])->where('id','[0-9]+');
+           Route::get('/edit/{id}',['as'  =>'geteditpro','uses' => 'ProductsController@getedit'])->where('id','[0-9]+');
+           Route::post('/edit/{id}',['as' =>'posteditpro','uses' => 'ProductsController@postedit'])->where('id','[0-9]+');
       });
        // -------------------- quan ly danh muc-----------------------------
         Route::group(['prefix' => '/news'], function() {

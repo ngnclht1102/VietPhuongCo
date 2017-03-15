@@ -11,7 +11,7 @@
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header"><small>Thêm mới sản phẩm</small></h1>
+				<h1 class="page-header"><small>Sửa sản phẩm </small></h1>
 			</div>
 		</div><!--/.row-->		
 		<div class="row">
@@ -37,71 +37,71 @@
 				      		{{ csrf_field() }}
 				      		<div class="form-group">
 					      		<label for="input-id">Chọn danh mục</label>
-					      		<select name="sltCate" id="inputSltCate"  required class="form-control">
+					      		<select name="sltCate" id="inputSltCate" required class="form-control">
 					      			<option value="">--Chọn thương hiệu--</option>
 					      			@foreach($cat as $dt)
-					      				<option value="{!!$dt->id!!}" >{!!'--|--|'.$dt->name!!}</option> 	
+					      				<option  {{($dt->id == $pro->cat_id ) ? 'selected' : '' }} value="{!!$dt->id!!}" value="{!!$dt->id!!}" >{!!'--|--|'.$dt->name!!}</option> 	
 					      			@endforeach	
 					      		</select>
 				      		</div>
-							  <div class="form-group">
+							<div class="form-group">
 					      		<label for="input-id">Chọn kiểu sản phẩm</label>
 					      		<select name="sltType" id="inputSltType" required class="form-control">
 					      			<option value="">--Chọn kiểu sản phẩm--</option>
 					      			@foreach($type as $dt)
-					      				<option value="{!!$dt->id!!}" >{!!$dt->name!!}</option> 	
+					      				<option {{($dt->id == $pro->product_type ) ? 'selected' : '' }} value="{!!$dt->id!!}" >{!!$dt->name!!}</option> 	
 					      			@endforeach	
 					      		</select>
 				      		</div>
 				      		<div class="form-group">
 				      			<label for="input-id">Tên sản phẩm</label>
-				      			<input type="text" name="txtname" id="inputTxtname" class="form-control" value="{{ old('txtname') }}"  >
+				      			<input type="text" name="txtname" id="inputTxtname" class="form-control" value="{!! old('txtname',isset($pro["name"]) ? $pro["name"] : null) !!}"  required="required">
 				      		</div>
-
+				      		
 				      		<div class="form-group">				      			
 				      			<div class="row">
 					      			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					      				Hình ảnh : <input type="file" name="txtimg" accept="image/png" id="inputtxtimg" value="{{ old('txtimg') }}" class="form-control" required="required">
+					      				Hình ảnh : <input type="file" name="txtimg" accept="image/png" id="inputtxtimg"  class="form-control" >
+					      				Ảnh cũ: <img src="{!!url('uploads/products/'.$pro->images)!!}" alt="{!!$pro->images!!}" width="80" height="60">
 					      			</div>
 					      			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-					      				Giá bán : <input type="number" name="txtprice" id="inputtxtprice" class="form-control" value="{{ old('txtprice') }}" required="required">
+					      				Giá bán : <input type="number" name="txtprice" id="inputtxtprice" class="form-control" value="{!! old('txtproname',isset($pro["price"]) ? $pro["price"] : null) !!}" required="required">
 					      			</div>
 					      		</div>				      			
 				      		</div>
-
 				      		<div class="form-group">
 				      			<label for="input-id">Đánh giá chi tiết sản phẩm</label>
 				      			<div class="row">					      			
 					      			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					      				<label for="input-id">Tóm tắt đánh giá</label>
-					      				<textarea name="txtre_Intro" id="inputTxtre_Intro" class="form-control" value="{{ old('txtre_Intro') }}" rows="2" required="required"></textarea>
+					      				<textarea name="txtre_Intro" id="inputTxtre_Intro" class="form-control"  rows="2">{!! old('txtReview',isset($pro->r_intro) ? $pro->r_intro : null) !!}</textarea>
 					      				<script type="text/javascript">
 											var editor = CKEDITOR.replace('txtre_Intro',{
 												language:'vi',
-												filebrowserImageBrowseUrl : '../../plugin/ckfinder/ckfinder.html?Type=Images',
-												filebrowserFlashBrowseUrl : '../../plugin/ckfinder/ckfinder.html?Type=Flash',
-												filebrowserImageUploadUrl : '../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-												filebrowserFlashUploadUrl : '../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+												filebrowserImageBrowseUrl : '../../../../plugin/ckfinder/ckfinder.html?Type=Images',
+												filebrowserFlashBrowseUrl : '../../../../plugin/ckfinder/ckfinder.html?Type=Flash',
+												filebrowserImageUploadUrl : '../../../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+												filebrowserFlashUploadUrl : '../../../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
 											});
 										</script>
 					      			</div>
 					      			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					      				<label for="input-id">Bài đánh giá chi tiết</label>
-					      				<textarea name="txtReview" id="inputtxtReview" class="form-control" rows="4" value="{{ old('txtReview') }}" required="required"></textarea>
+					      				<textarea name="txtReview" id="inputtxtReview" class="form-control" rows="4" ">{!! old('txtReview',isset($pro->review) ? $pro->review : null) !!}</textarea>
 					      				<script type="text/javascript">
 											var editor = CKEDITOR.replace('txtReview',{
 												language:'vi',
-												filebrowserImageBrowseUrl : '../../plugin/ckfinder/ckfinder.html?Type=Images',
-												filebrowserFlashBrowseUrl : '../../plugin/ckfinder/ckfinder.html?Type=Flash',
-												filebrowserImageUploadUrl : '../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-												filebrowserFlashUploadUrl : '../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+												filebrowserImageBrowseUrl : '../../../../plugin/ckfinder/ckfinder.html?Type=Images',
+												filebrowserFlashBrowseUrl : '../../../../plugin/ckfinder/ckfinder.html?Type=Flash',
+												filebrowserImageUploadUrl : '../../../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+												filebrowserFlashUploadUrl : '../../../../plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
 											});
 										</script>
 					      			</div>
 					      		</div>				      			
 				      		</div>		      				      		
 
-				      		<input type="submit" name="btnCateAdd" class="btn btn-primary" value="Thêm sản phẩm" class="button" />
+				      		<input type="submit" name="btnCateAdd" class="btn btn-primary" value="Lưu lại" class="button" />
 				      	</form>			      	
 					</div>
 				</div>

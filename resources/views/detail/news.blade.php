@@ -19,9 +19,7 @@ $items = DB::table('news')
                         <span style="font-size:10px;color:#bdc3c7;">Đăng ngày: {!!$data->updated_at!!} </span>
                     </p>
                     <div>{!!$data->intro!!}</div>
-                    <div class="image-container">
-                        <a href="#"><img alt="{!!$data->images!!}" src="{!!url('uploads/news/'.$data->images)!!}"></a>
-                    </div>
+                    
                 </div>
                 <div class="post-content">
                     {!!$data->full!!}

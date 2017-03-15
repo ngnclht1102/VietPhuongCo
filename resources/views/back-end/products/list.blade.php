@@ -59,7 +59,6 @@
 										<th>ID</th>										
 										<th>Hình ảnh</th>
 										<th>Tên sản phẩm</th>
-										<th>Tóm tắt chức năng</th>
 										<th>Thương hiệu</th>
 										<th>Giá bán</th>
 										<th>Trạng thái</th>
@@ -72,7 +71,6 @@
 											<td>{!!$row->id!!}</td>
 											<td> <img src="{!!url('uploads/products/'.$row->images)!!}" alt="iphone" width="50" height="40"></td>
 											<td>{!!$row->name!!}</td>
-											<td>{!!$row->intro!!}</td>
 											<td>{!!$row->category->name!!}</td>
 											<td>{!!$row->price!!} đ</td>
 											<td>
@@ -83,8 +81,8 @@
 												@endif
 											</td>
 											<td>
-											    <a href="{!!url('admin/sanpham/mobile/edit/'.$row->id)!!}" title="Sửa"><span class="glyphicon glyphicon-edit">edit</span> </a>
-											    <a href="{!!url('admin/sanpham/del/'.$row->id)!!}"  title="Xóa" onclick="return xacnhan('Xóa danh mục này ?')"><span class="glyphicon glyphicon-remove">remove</span> </a>
+											    <a href="{!!url('admin/sanpham/edit/'.$row->id)!!}" title="Sửa"><span class="glyphicon glyphicon-edit"> Sửa </span> </a>
+											    <a href="{!!url('admin/sanpham/del/'.$row->id)!!}"  title="Xóa" onclick="return xacnhan('Xóa sản phẩm này ?')"><span class="glyphicon glyphicon-remove"> Xoá </span> </a>
 											</td>
 										</tr>
 									@endforeach								
