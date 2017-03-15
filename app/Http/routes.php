@@ -52,16 +52,16 @@ Route::group(['middleware' => 'admin'], function () {
            Route::get('edit/{id}',['as'  =>'geteditcat','uses' => 'CategoryController@getedit'])->where('id','[0-9]+');
            Route::post('edit/{id}',['as' =>'posteditcat','uses' => 'CategoryController@postedit'])->where('id','[0-9]+');
     	});
-         // -------------------- quan ly danh muc--------------------
+         // -------------------- quan ly san pham--------------------
         Route::group(['prefix' => '/sanpham'], function() {
-           Route::get('/{loai}/add',['as'        =>'getaddpro','uses' => 'ProductsController@getadd']);
-           Route::post('/{loai}/add',['as'       =>'postaddpro','uses' => 'ProductsController@postadd']);
+           Route::get('/add',['as'        =>'getaddpro','uses' => 'ProductsController@getadd']);
+           Route::post('/add',['as'       =>'postaddpro','uses' => 'ProductsController@postadd']);
 
            Route::get('/{loai}',['as'       =>'getpro','uses' => 'ProductsController@getlist']);
            Route::get('/del/{id}',['as'   =>'getdellpro','uses' => 'ProductsController@getdel'])->where('id','[0-9]+');
            
-           Route::get('/{loai}/edit/{id}',['as'  =>'geteditpro','uses' => 'ProductsController@getedit'])->where('id','[0-9]+');
-           Route::post('/{loai}/edit/{id}',['as' =>'posteditpro','uses' => 'ProductsController@postedit'])->where('id','[0-9]+');
+           Route::get('/edit/{id}',['as'  =>'geteditpro','uses' => 'ProductsController@getedit'])->where('id','[0-9]+');
+           Route::post('/edit/{id}',['as' =>'posteditpro','uses' => 'ProductsController@postedit'])->where('id','[0-9]+');
       });
        // -------------------- quan ly danh muc-----------------------------
         Route::group(['prefix' => '/news'], function() {

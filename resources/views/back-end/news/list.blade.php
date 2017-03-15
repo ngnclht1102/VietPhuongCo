@@ -37,7 +37,7 @@
 								<thead>
 									<tr>										
 										<th>ID</th>										
-										<th>image</th>										
+										<th>Hình ảnh</th>										
 										<th>Tiêu đề bản tin</th>										
 										<th>Tóm tắt</th>										
 										<th>Trạng thái</th>										
@@ -59,8 +59,8 @@
 											@endif
 										</td>
 										<td style="width: 120px;">
-										    <a href="{!!url('admin/news/edit/'.$row->id)!!}" title="Sửa"><span class="glyphicon glyphicon-edit">edit</span> </a>
-										    <a href="{!!url('admin/news/del/'.$row->id)!!}"  title="Xóa" onclick="return xacnhan('Xóa danh mục này ?')"><span class="glyphicon glyphicon-remove">remove</span> </a>
+										    <a href="{!!url('admin/news/edit/'.$row->id)!!}" title="Sửa"><span class="glyphicon glyphicon-edit"> Sửa </span> </a>
+										    <a href="{!!url('admin/news/del/'.$row->id)!!}"  title="Xóa" onclick="return xacnhan('Xóa bài viết này ?')"><span class="glyphicon glyphicon-remove"> Xoá </span> </a>
 										</td>
 									</tr>	
 								@endforeach								
