@@ -10,8 +10,8 @@
 		</div><!--/.row-->
 		<?php 
           $oder = DB::table('oders')->count('*'); 
-          $oder_new = DB::table('oders')->where('status',0)->count('*'); 
-          $mem = DB::table('users')->count('*');            
+          $contacts = DB::table('contacts')->count('*'); 
+          $numOfArticals = DB::table('news')->count('*');            
           $pro = DB::table('products')->count('*');            
 
         ?>
@@ -23,27 +23,14 @@
 		
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-lg-3">
-				<div class="panel panel-blue panel-widget ">
-					<div class="row no-padding">
-						<div class="col-sm-3 col-lg-5 widget-left">
-							<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"/></svg>
-						</div>
-						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">{!!$oder!!}</div>
-							<div class="text-muted"> tổng đơn hàng</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6 col-lg-3">
 				<div class="panel panel-red panel-widget ">
 					<div class="row no-padding">
 						<div class="col-sm-3 col-lg-5 widget-left">
 							<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"/></svg>
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">{!!$oder_new!!}</div>
-							<div class="text-muted"> Đơn hàng mới</div>
+							<div class="large">{!!$numOfArticals!!}</div>
+							<div class="text-muted">Bài viết</div>
 						</div>
 					</div>
 				</div>
@@ -68,15 +55,15 @@
 							<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">{!!$mem!!}</div>
-							<div class="text-muted">Khách hàng</div>
+							<div class="large">{!!$contacts!!}</div>
+							<div class="text-muted"> Liên hệ</div>
 						</div>
 					</div>
 				</div>
 			</div>		
 		</div><!--/.row-->
 		
-		<div class="row">
+		<!--<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">Tổng quan trang cửa hàng</div>
@@ -87,9 +74,10 @@
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->
+		</div>-->
+		<!--/.row-->
 		
-		<div class="row">
+		<!--<div class="row">
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
@@ -126,11 +114,12 @@
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->
+		</div>-->
+		<!--/.row-->
 								
 		<div class="row">
 			<div class="col-md-8">
-				<small>Coppyright 2016</small>
+				<small>Coppyright 2017 - Việt Phương</small>
 			</div><!--/.col-->
 		</div><!--/.row-->
 	</div>	<!--/.main-->
