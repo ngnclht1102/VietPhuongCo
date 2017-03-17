@@ -25,6 +25,7 @@ class ProductTypesController extends Controller
    {
    		$data = ProductType::find($id);
         $data->name = $rq->txtName;
+        $data->slug = str_slug($rq->txtName,'-');
         $data->save(); 
     return redirect('admin/product_types')
          	->with(['flash_level'=>'result_msg','flash_massage'=>'Đã sửa kiểu sản phẩm thành công']);
@@ -39,6 +40,7 @@ class ProductTypesController extends Controller
    {
    		$data = new ProductType();
         $data->name = $rq->txtName;
+        $data->slug = str_slug($rq->txtName,'-');
         $data->save(); 
     return redirect('admin/product_types')
          	->with(['flash_level'=>'result_msg','flash_massage'=>'Đã thêm kiểu sản phẩm thành công']);

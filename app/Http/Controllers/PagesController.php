@@ -166,17 +166,26 @@ class PagesController extends Controller
             } 
             return redirect()->route('index');
     	} 
-        
 
         elseif ($cat == 'lien-he') {            
             return view('contact');
         }
 
         elseif ($cat == 'san-pham') {
-            $products = DB::table('products')
+            if($rq->hang && $rq->type) {
+                $products = DB::table('products')
+                ->join('category', 'products.cat_id', '=', 'category.id')
+                ->where('category.id','=',$rq->hang)
+                ->where('product_type','=',$rq->type)
+                ->select('products.*')
+                ->paginate(12);
+            } else {
+                $products = DB::table('products')
                 ->join('category', 'products.cat_id', '=', 'category.id')
                 ->select('products.*')
                 ->paginate(12);
+            }
+            
             return view('product',['data'=>$products]);
         }
         

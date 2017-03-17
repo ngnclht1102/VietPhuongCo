@@ -2,9 +2,6 @@
 @section('content')
 <?php 
 $newProduct = DB::table('products')
-        ->join('category', 'products.cat_id', '=', 'category.id')
-        ->join('pro_details', 'pro_details.pro_id', '=', 'products.id')
-        ->select('products.*','pro_details.cpu','pro_details.ram','pro_details.screen','pro_details.vga','pro_details.storage','pro_details.exten_memmory','pro_details.cam1','pro_details.cam2','pro_details.sim','pro_details.connect','pro_details.pin','pro_details.os','pro_details.note')
         ->orderBy('products.created_at', 'desc')
         ->paginate(6); 
 
@@ -15,7 +12,7 @@ $newProduct = DB::table('products')
                     <!-- begin main -->
                     <div id="main" class="col-sm-8 col-md-9">
                         <ul class="products row add-clearfix">
-                            @foreach($data as $row)
+                            @forelse($data as $row)
                             <li class="product col-sms-6 col-sm-6 col-lg-4 box">
                                 <a href="{!!url('san-pham/'.$row->id.'-'.$row->slug)!!}" class="product-image">
                                     <div class="first-img">
@@ -33,7 +30,9 @@ $newProduct = DB::table('products')
                                     <a href="{!!url('san-pham/'.$row->id.'-'.$row->slug)!!}" class="btn btn-add-to-cart" style="float: right">Chi tiết</a>
                                 </div>
                             </li>
-                            @endforeach
+                            @empty
+                                <p>Chưa có hoặc không tìm thấy sản phẩm</p>
+                            @endforelse
                         </ul>
                         <div class="post-pagination">
                             {{ $data->links() }}
@@ -56,7 +55,7 @@ $newProduct = DB::table('products')
                                     <a href="#{!!$type->slug!!}" data-toggle="collapse">{!!$type->name!!}</a>
                                     <ul id="{!!$type->slug!!}" class="collapse">
                                         @foreach($categories as $category)
-                                        <li><a href="{!!url('/tim-san-pham/'.$type->id.'-'.$category->id.'-'.$type->slug.'-'.$category->slug)!!}">{!!$category->name!!}</a></li>
+                                        <li><a href="{!!url('/san-pham?type='.$type->id.'&hang='.$category->id)!!}">{!!$category->name!!}</a></li>
                                         @endforeach        
                                     </ul>
                                 </li>
@@ -65,7 +64,7 @@ $newProduct = DB::table('products')
                         </div>
 
                         <div class="widget box">
-                            <h4>Bán chạy</h4>
+                            <h4>Sản phẩm mới</h4>
                             <ul class="product-list-widget">
                                 @foreach($newProduct as $row)
                                 <li>

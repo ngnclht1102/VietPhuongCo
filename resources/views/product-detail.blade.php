@@ -28,9 +28,6 @@
                 <ul class="related products row add-clearfix">
                     <?php 
                     $newProduct = DB::table('products')
-                            ->join('category', 'products.cat_id', '=', 'category.id')
-                            ->join('pro_details', 'pro_details.pro_id', '=', 'products.id')
-                            ->select('products.*','pro_details.cpu','pro_details.ram','pro_details.screen','pro_details.vga','pro_details.storage','pro_details.exten_memmory','pro_details.cam1','pro_details.cam2','pro_details.sim','pro_details.connect','pro_details.pin','pro_details.os','pro_details.note')
                             ->orderBy('products.created_at', 'desc')
                             ->paginate(6); 
 
@@ -82,7 +79,7 @@
             </div>
 
             <div class="widget box">
-                <h4>Bán chạy</h4>
+                <h4>Sản phẩm tương tự</h4>
                 <ul class="product-list-widget">
                     @foreach($newProduct as $row)
                     <li>
