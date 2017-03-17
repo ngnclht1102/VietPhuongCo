@@ -41,14 +41,6 @@ $newProduct = DB::table('products')
                     </div> <!-- end main -->
                     <!-- begin sidebar -->
                     <div class="sidebar col-sm-4 col-md-3">
-                        <div class="main-mini-search-form full-width box">
-                            <form method="get" role="search">
-                                <div class="search-box">
-                                    <input type="text" placeholder="Search" name="s" value="">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
                         <?php 
                         $productTypes = DB::table('product_types')->get();
                         $categories = DB::table('category')

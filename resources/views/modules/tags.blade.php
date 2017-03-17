@@ -14,6 +14,6 @@
 
 <div class="tags">
     @foreach($tags as $tag)
-    <a class="tag" href="#">{!!$tag!!}</a>
+    <a class="tag" href="{!!url('/tim-kiem?tag='.$tag)!!}">{!!$tag!!}</a>
     @endforeach
 </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Requests;
+use App\Http\SearchRequest;
 use Auth;
 use App\Products;
 use App\Category;
@@ -133,35 +134,39 @@ class PagesController extends Controller
         ->with(['flash_level'=>'result_msg','flash_massage'=>' Đơn hàng của bạn đã được gửi đi !']);    
         
     }
-    public function getcate($cat)
-    {
-    	if ($cat == 'mobile') {
-            // mobile
-            $mobile = DB::table('products')
-                ->join('category', 'products.cat_id', '=', 'category.id')
-                ->where('category.parent_id','=','1')
-                ->select('products.*')
-                ->paginate(12);
-    		return view('category.mobile',['data'=>$mobile]);
+    public function getcate($cat, Request $rq)
+    {   
+    	if ($cat == 'tim-kiem') {
+            if($rq->keyword || $rq->tag) {
+                $new =  DB::table('news')
+                        ->orderBy('created_at', 'desc')
+                        ->where('cat_id','=','22')
+                        ->paginate(5);
+                if($rq->keyword){
+                    $all = DB::table('news')
+                    ->orderBy('created_at', 'desc')
+                    ->where('title','like','%'.$rq->keyword.'%')
+                    ->orWhere('slug','like','%'.$rq->keyword.'%')
+                    ->orWhere('intro','like','%'.$rq->keyword.'%')
+                    ->orWhere('full','like','%'.$rq->keyword.'%')
+                    ->orWhere('tag','like','%'.$rq->keyword.'%')
+                    ->paginate(10,['*'],'trang');
+                }
+                else if($rq->tag) {
+                    $all = DB::table('news')
+                    ->orderBy('created_at', 'desc')
+                    ->where('title','like','%'.$rq->tag.'%')
+                    ->orWhere('slug','like','%'.$rq->tag.'%')
+                    ->orWhere('intro','like','%'.$rq->tag.'%')
+                    ->orWhere('full','like','%'.$rq->tag.'%')
+                    ->orWhere('tag','like','%'.$rq->tag.'%')
+                    ->paginate(10,['*'],'trang');
+                 }   
+    		    return view('new_list',['data'=>$new,'all'=>$all]);
+            } 
+            return redirect()->route('index');
     	} 
-        elseif ($cat == 'laptop') {
-            // mobile
-            $lap = DB::table('products')
-                ->join('category', 'products.cat_id', '=', 'category.id')
-                ->where('category.parent_id','=','2')
-                ->select('products.*')
-                ->paginate(12);
-            return view('category.laptop',['data'=>$lap]);
-        }
-        elseif ($cat == 'pc') {
-        // mobile
-        $pc = DB::table('products')
-                ->join('category', 'products.cat_id', '=', 'category.id')
-                ->where('category.parent_id','=','19')
-                ->select('products.*')
-                ->paginate(8);
-            return view('category.pc',['data'=>$pc]);
-        }
+        
 
         elseif ($cat == 'lien-he') {            
             return view('contact');
@@ -184,7 +189,7 @@ class PagesController extends Controller
                    ->orderBy('created_at', 'desc')
                    ->where('cat_id','=','22')
                    ->paginate(10,['*'],'trang');
-            return view('resolving',['data'=>$new,'all'=>$all]);
+            return view('new_list',['data'=>$new,'all'=>$all]);
         } elseif ($cat == 'kien-thuc') {
             $new =  DB::table('news')
                     ->orderBy('created_at', 'desc')
@@ -194,7 +199,7 @@ class PagesController extends Controller
                    ->orderBy('created_at', 'desc')
                    ->where('cat_id','=','23')
                    ->paginate(10,['*'],'trang');
-            return view('resolving',['data'=>$new,'all'=>$all]);
+            return view('new_list',['data'=>$new,'all'=>$all]);
         } 
         
     }

@@ -12,9 +12,9 @@
                             <li class="mini-search">
                                 <a href="#"><i class="fa fa-search has-circle"></i></a>
                                 <div class="main-nav-search-form">
-                                    <form method="get" role="search">
+                                    <form method="get" role="search" action="{!!url('/tim-kiem')!!}">
                                         <div class="search-box">
-                                            <input type="text" id="s" name="s" value="">
+                                            <input type="text" id="s" name="keyword" value="">
                                             <button type="submit"><i class="fa fa-search"></i></button>
                                         </div>
                                     </form>

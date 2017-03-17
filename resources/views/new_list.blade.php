@@ -5,7 +5,7 @@
                     <div id="main" class="col-sm-8">
                         
                         <div class="blog-posts">
-                        @foreach($all as $row)
+                        @forelse($all as $row)
                             <article class="post post-full">
                                 <div class="post-image col-md-5">
                                     <div class="image">
@@ -24,7 +24,9 @@
                                     </div>
                                 </div>
                             </article>
-                            @endforeach                                            
+                            @empty
+                                <p>Không có hoặc không tìm thấy nội dung
+                            @endforelse
                             <div class="post-pagination">
                                 {{ $all->links() }}
                             </div>
@@ -32,9 +34,9 @@
                     </div>
                     <div class="sidebar col-sm-4">
                         <div class="main-mini-search-form full-width box">
-                            <form method="get" role="search">
+                            <form method="get" role="search" action="{!!url('/tim-kiem')!!}">
                                 <div class="search-box">
-                                    <input type="text" placeholder="Search" name="s" value="">
+                                    <input type="text" placeholder="Tìm bài viết..." name="keyword" value="">
                                     <button type="submit"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
