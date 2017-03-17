@@ -11,7 +11,7 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
                                 <div class="icon-container">
-                                    <i class="fa fa-eye"></i>
+                                    <image src="{!!url('front-end/templates/vietphuong/images/inan.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="#">In ấn</a></h4>
@@ -22,7 +22,7 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
                                 <div class="icon-container">
-                                    <i class="fa fa-thumbs-o-up"></i>
+                                    <image src="{!!url('front-end/templates/vietphuong/images/thietbimavach.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="#">Thiết bị mã vạch</a></h4>
@@ -33,7 +33,7 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
                                 <div class="icon-container">
-                                    <i class="fa fa-star"></i>
+                                    <image src="{!!url('front-end/templates/vietphuong/images/thietbiit.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="#">Thiết bị công nghệ thông tin</a></h4>
@@ -44,7 +44,7 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
                                 <div class="icon-container">
-                                    <i class="fa fa-shopping-cart"></i>
+                                    <image src="{!!url('front-end/templates/vietphuong/images/phanmem.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="#">Giải pháp phần mềm</a></h4>
@@ -57,11 +57,11 @@
                         <div class="col-sm-6">
                             <div class="post-slider style1 owl-carousel box owl-theme" style="opacity: 1; display: block;">
                                 <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 2820px; left: 0px; display: block; transition: all 800ms ease; transform: translate3d(-940px, 0px, 0px);"><div class="owl-item" style="width: 470px;"><a href="http://placehold.it/770x415" class="soap-mfp-popup">
-                                    <img src="http://placehold.it/770x415" alt="">
+                                    <img src="{!!url('front-end/templates/vietphuong/images/slide1.png')!!}"  alt="">
                                 </a></div><div class="owl-item" style="width: 470px;"><a href="http://placehold.it/770x415" class="soap-mfp-popup">
-                                    <img src="http://placehold.it/770x415" alt="">
+                                    <img src="{!!url('front-end/templates/vietphuong/images/slide2.png')!!}"  alt="">
                                 </a></div><div class="owl-item active" style="width: 470px;"><a href="http://placehold.it/770x415" class="soap-mfp-popup">
-                                    <img src="http://placehold.it/770x415" alt="">
+                                    <img src="{!!url('front-end/templates/vietphuong/images/slide2.png')!!}" alt="">
                                 </a></div></div></div>
                                 
                                 
