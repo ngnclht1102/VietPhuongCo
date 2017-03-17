@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Requests\ProductsTypeRequest;
+use App\ProductType;
+
+class ProductTypesController extends Controller
+{
+   public function getlist()
+   {
+   		$data = ProductType::paginate(10);
+    	return view('back-end.product_types.list',['data'=>$data]);
+   }
+   public function getedit($id)
+   {
+   		$data = ProductType::where('id',$id)->first();
+   		return view('back-end.product_types.edit',['data'=>$data]);
+   }
+
+   public function postedit($id, ProductsTypeRequest $rq)
+   {
+   		$data = ProductType::find($id);
+        $data->name = $rq->txtName;
+        $data->save(); 
+    return redirect('admin/product_types')
+         	->with(['flash_level'=>'result_msg','flash_massage'=>'Đã sửa kiểu sản phẩm thành công']);
+   }
+
+   public function getadd()
+   {
+   		return view('back-end.product_types.add');
+   }
+
+   public function postadd(ProductsTypeRequest $rq)
+   {
+   		$data = new ProductType();
+        $data->name = $rq->txtName;
+        $data->save(); 
+    return redirect('admin/product_types')
+         	->with(['flash_level'=>'result_msg','flash_massage'=>'Đã thêm kiểu sản phẩm thành công']);
+   }
+
+   public function getdel($id)
+   {
+       $item = ProductType::find($id);
+        $item->delete();
+        return redirect('admin/product_types')
+        ->with(['flash_level'=>'result_msg','flash_massage'=>'Đã xoá kiểu sản phẩm thành công']);
+   }
+}

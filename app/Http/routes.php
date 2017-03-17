@@ -92,6 +92,17 @@ Route::group(['middleware' => 'admin'], function () {
            Route::get('/detail/{id}',['as'  =>'getcontactdetail','uses' => 'ContactsController@getdetail'])->where('id','[0-9]+');
            Route::post('/detail/{id}',['as' =>'postcontactdetail','uses' => 'ContactsController@postdetail'])->where('id','[0-9]+');
       });
+      // -------------------- product type--------------------
+        Route::group(['prefix' => '/product_types'], function() {
+
+           Route::get('',['as'       =>'getproduct_types','uses' => 'ProductTypesController@getlist']);
+           Route::get('/del/{id}',['as'   =>'getdelproduct_types','uses' => 'ProductTypesController@getdel'])->where('id','[0-9]+');
+           Route::get('/add',['as'  =>'getaddproduct_typesdetail','uses' => 'ProductTypesController@getadd'])->where('id','[0-9]+');
+           Route::post('/add',['as'  =>'postaddproduct_typesdetail','uses' => 'ProductTypesController@postadd'])->where('id','[0-9]+');
+
+           Route::get('/edit/{id}',['as'  =>'getproduct_typesdetail','uses' => 'ProductTypesController@getedit'])->where('id','[0-9]+');
+           Route::post('/edit/{id}',['as' =>'postproduct_typesdetail','uses' => 'ProductTypesController@postedit'])->where('id','[0-9]+');
+      });
         // -------------------- quan ly thong tin khach hang--------------------
         Route::group(['prefix' => '/khachhang'], function() {
 

@@ -8,6 +8,7 @@
 			<li class="{{(Request::path() == 'admin/news' ) ? 'active' : '' }}" ><a href="{!!url('admin/news')!!}"><span class="glyphicon glyphicon-file"></span> Quản lý Tin tức</a></li>
 
 			<li class="{{(Request::path() == 'admin/contacts' ) ? 'active' : '' }}" ><a href="{!!url('admin/contacts')!!}"><svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>Quản lý liên hệ</a></li>
+			<li class="{{(Request::path() == 'admin/product_types' ) ? 'active' : '' }}" ><a href="{!!url('admin/product_types')!!}"><svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>Kiểu sản phẩm</a></li>			
 
 			<li role="presentation" class="divider"></li>
 			
