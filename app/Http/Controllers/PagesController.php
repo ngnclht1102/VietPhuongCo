@@ -142,27 +142,39 @@ class PagesController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->where('cat_id','=','22')
                         ->paginate(5);
+                
                 if($rq->keyword){
                     $all = DB::table('news')
-                    ->orderBy('created_at', 'desc')
-                    ->where('title','like','%'.$rq->keyword.'%')
-                    ->orWhere('slug','like','%'.$rq->keyword.'%')
-                    ->orWhere('intro','like','%'.$rq->keyword.'%')
-                    ->orWhere('full','like','%'.$rq->keyword.'%')
-                    ->orWhere('tag','like','%'.$rq->keyword.'%')
-                    ->paginate(10,['*'],'trang');
+                        ->orderBy('created_at', 'desc')
+                        ->where('title','like','%'.$rq->keyword.'%')
+                        ->orWhere('slug','like','%'.$rq->keyword.'%')
+                        ->orWhere('intro','like','%'.$rq->keyword.'%')
+                        ->orWhere('full','like','%'.$rq->keyword.'%')
+                        ->orWhere('tag','like','%'.$rq->keyword.'%')
+                        ->paginate(10,['*'],'trang');
+                    $products = DB::table('products')
+                        ->join('category', 'products.cat_id', '=', 'category.id')
+                        ->where('category.name','like','%'.$rq->keyword.'%')
+                        ->orWhere('products.name','like','%'.$rq->keyword.'%')
+                        ->orWhere('products.slug','like','%'.$rq->keyword.'%')
+                        ->orWhere('r_intro','like','%'.$rq->keyword.'%')
+                        ->orWhere('review','like','%'.$rq->keyword.'%')
+                        ->orWhere('tag','like','%'.$rq->keyword.'%')
+                        ->select('products.*')
+                        ->paginate(12,['*'],'trang_sanpham');
                 }
                 else if($rq->tag) {
+                    $products = [];
                     $all = DB::table('news')
-                    ->orderBy('created_at', 'desc')
-                    ->where('title','like','%'.$rq->tag.'%')
-                    ->orWhere('slug','like','%'.$rq->tag.'%')
-                    ->orWhere('intro','like','%'.$rq->tag.'%')
-                    ->orWhere('full','like','%'.$rq->tag.'%')
-                    ->orWhere('tag','like','%'.$rq->tag.'%')
-                    ->paginate(10,['*'],'trang');
+                        ->orderBy('created_at', 'desc')
+                        ->where('title','like','%'.$rq->tag.'%')
+                        ->orWhere('slug','like','%'.$rq->tag.'%')
+                        ->orWhere('intro','like','%'.$rq->tag.'%')
+                        ->orWhere('full','like','%'.$rq->tag.'%')
+                        ->orWhere('tag','like','%'.$rq->tag.'%')
+                        ->paginate(10,['*'],'trang');
                  }   
-    		    return view('new_list',['data'=>$new,'all'=>$all]);
+    		    return view('search',['data'=>$new,'all'=>$all,'products'=>$products]);
             } 
             return redirect()->route('index');
     	} 
