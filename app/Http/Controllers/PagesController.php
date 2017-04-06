@@ -184,13 +184,29 @@ class PagesController extends Controller
         }
 
         elseif ($cat == 'san-pham') {
-            if($rq->hang && $rq->type) {
-                $products = DB::table('products')
-                ->join('category', 'products.cat_id', '=', 'category.id')
-                ->where('category.id','=',$rq->hang)
-                ->where('product_type','=',$rq->type)
-                ->select('products.*')
-                ->paginate(12);
+            if($rq->hang || $rq->type) {
+                if($rq->hang && $rq->type) {
+                    $products = DB::table('products')
+                    ->join('category', 'products.cat_id', '=', 'category.id')
+                    ->where('category.id','=',$rq->hang)
+                    ->where('product_type','=',$rq->type)
+                    ->select('products.*')
+                    ->paginate(12);
+                } else
+                if($rq->hang) {
+                    $products = DB::table('products')
+                    ->join('category', 'products.cat_id', '=', 'category.id')
+                    ->where('category.id','=',$rq->hang)
+                    ->select('products.*')
+                    ->paginate(12);
+                }else
+                if($rq->type) {
+                    $products = DB::table('products')
+                    ->join('category', 'products.cat_id', '=', 'category.id')
+                    ->where('product_type','=',$rq->type)
+                    ->select('products.*')
+                    ->paginate(12);
+                }
             } else {
                 $products = DB::table('products')
                 ->join('category', 'products.cat_id', '=', 'category.id')
@@ -215,10 +231,12 @@ class PagesController extends Controller
             $new =  DB::table('news')
                     ->orderBy('created_at', 'desc')
                     ->where('cat_id','=','23')
+                    ->where('id','<>','26')
                     ->paginate(5);
             $all = DB::table('news')
                    ->orderBy('created_at', 'desc')
                    ->where('cat_id','=','23')
+                   ->where('id','<>','26')
                    ->paginate(10,['*'],'trang');
             return view('new_list',['data'=>$new,'all'=>$all]);
         } 

@@ -2,27 +2,30 @@
             <div class="footer-wrapper">
                 <div class="container">
                     <div class="row add-clearfix same-height">
-                        <div class="col-sm-6 col-md-3 col-md-offset-1">
-                            @include('modules.recent-news-vp')
-                        </div>
-                        <div class="col-sm-6 col-md-3 col-md-offset-1">
-                            <h5 class="section-title box">Đối tác</h5>
-                            <ul class="arrow useful-links">
-                                <li><a href="#">Zebra</a></li>
-                                <li><a href="#">Godex</a></li>
-                                <li><a href="#">Xpos</a></li>
+                        <div class="col-sm-6 col-md-3">
+                            <h5 class="section-title box">Thông tin công ty</h5>
+                            <ul class="useful-links">
+                                <li>Tên công ty: Việt Phương</li>
+                                <li>Địa chỉ: 187/7 Điện Biên Phủ, P. Đa Kao, Quận 1, TP. HCM</li>
+                                <li><a href="tel:84862731585">Điện thoại: (84-8) 6273 1585</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-md-3 col-md-offset-1">
-                            <h5 class="section-title box">Việt Phương</h5>
+                        <div class="col-sm-6 col-md-3">
+                            @include('modules.recent-news-vp')
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h5 class="section-title box">Đối tác</h5>
+                            <ul class="arrow useful-links">
+                                <li><a href="https://www.zebra.com/ap/en.html">Zebra</a></li>
+                                <li><a href="http://www.godexintl.com/">Godex</a></li>
+                                <li><a href="http://www.intermec.co.uk/">Intermec</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h5 class="section-title box">Về chúng tôi</h5>
                             <p>Chúng tôi là một công ty sản xuất và phân phối các thiết bị phần cứng, phần mềm liên quan tới các giải pháp về siêu thị, kho bãi, in ấn...
 
 Chúng tôi cam kết đưa lại sự tiện nghi tốt nhất cho khách hàng sử dụng dịch vụ và thiết bị của chúng tôi..</p>
-                            <div class="social-icons">
-                                <a href="https://www.facebook.com/trangiaphuong" class="social-icon"><i class="fa fa-facebook has-circle" data-toggle="tooltip" data-placement="top" title="Facebook"></i></a>
-                                <a href="#" class="social-icon"><i class="fa fa-google-plus has-circle" data-toggle="tooltip" data-placement="top" title="GooglePlus"></i></a>
-                                <a href="#" class="social-icon"><i class="fa fa-skype has-circle" data-toggle="tooltip" data-placement="top" title="Skype"></i></a>
-                            </div>
                             <a href="{{url('/lien-he')}}" class="btn btn-sm style4">Liên hệ</a>
                             <a href="#" class="back-to-top"><span></span></a>
                         </div>

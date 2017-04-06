@@ -14,7 +14,7 @@
             <div class="details">
                 <h5>Điện thoại</h5>
                 <p>
-                    (84-8) 6273 1585
+                    <a href="tel:84862731585">(84-8) 6273 1585</a>
                 </p>
             </div>
         </li>
@@ -22,8 +22,8 @@
             <i class="fa fa-envelope"></i>
             <div class="details">
                 <h5>Email</h5>
-                <p>
-                    info@vpco.com.vn
+                <p> 
+                    <a href="mailto:info@vpco.com.vn">info@vpco.com.vn</a>
                     <br>
                     www.vpco.com.vn
                 </p>
@@ -39,7 +39,7 @@
         @if (count($errors) > 0)
               <div class="alert alert-danger" style="background-color: #862323">
                   <ul>
-                    <li>{{ $errors->all(){0} }}</li>
+                    <li>{{ $errors->all()}}</li>
                   </ul>
             </div>
         @elseif (Session()->has('flash_level'))

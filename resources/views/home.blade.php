@@ -14,7 +14,7 @@
                                     <image src="{!!url('front-end/templates/vietphuong/images/inan.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
-                                    <h4 class="box-title"><a href="#">In ấn</a></h4>
+                                    <h4 class="box-title"><a href="{!!url('/san-pham?type=6')!!}">In ấn</a></h4>
                                     <p>Chúng tôi sản xuất giấy in, mực in, và phân phối các loại máy in giấy, máy in bill cỡ nhỏ và công nghiệp.</p>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                                     <image src="{!!url('front-end/templates/vietphuong/images/thietbimavach.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
-                                    <h4 class="box-title"><a href="#">Thiết bị mã vạch</a></h4>
+                                    <h4 class="box-title"><a href="{!!url('/san-pham?type=2')!!}">Thiết bị mã vạch</a></h4>
                                     <p>Chúng tôi cung cấp các thiết bị mã vạch</p>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                     <image src="{!!url('front-end/templates/vietphuong/images/thietbiit.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
-                                    <h4 class="box-title"><a href="#">Thiết bị công nghệ thông tin</a></h4>
+                                    <h4 class="box-title"><a href="{!!url('/san-pham?type=1')!!}">Thiết bị công nghệ thông tin</a></h4>
                                     <p>Chúng tôi cung cấp các thiết bị công nghệ thông tin chất lượng cao với giá thành hợp lý.</p>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                     <image src="{!!url('front-end/templates/vietphuong/images/phanmem.png')!!}" alt="thietbicongnghethongtin" />
                                 </div>
                                 <div class="box-content">
-                                    <h4 class="box-title"><a href="#">Giải pháp phần mềm</a></h4>
+                                    <h4 class="box-title"><a href="{!!url('/san-pham?type=7')!!}">Giải pháp phần mềm</a></h4>
                                     <p>Chúng tôi cung cấp các giải pháp phần mềm kho, tính tiền, siêu thị....</p>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                             <p>Chúng tôi là một công ty sản xuất và phân phối các thiết bị phần cứng, phần mềm liên quan tới các giải pháp về siêu thị, kho bãi, in ấn...</p>
                             <p>Chúng tôi cam kết đưa lại sự tiện nghi tốt nhất cho khách hàng sử dụng dịch vụ và thiết bị của chúng tôi. </p>
                             <br>
-                            <a href="#" class="btn btn-md style1">Đọc thêm</a>
+                            <a href="{!!url('/tin-tuc/26-gioi-thieu-ve-viet-phuong')!!}" class="btn btn-md style1">Đọc thêm</a>
                         </div>
                     </div>
                 </div>

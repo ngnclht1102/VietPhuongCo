@@ -24,7 +24,12 @@ $newProduct = DB::table('products')
                                 </a>
                                 <div class="product-content" style="padding-bottom: 33px;">
                                     <h5 class="product-title"><a href="{!!url('san-pham/'.$row->id.'-'.$row->slug)!!}">{!!$row->name!!}</a></h5>
-                                    <span class="product-price"><strong>{!!number_format($row->price) !!}</strong><span class="currency-symbol"> VND</span></span>
+                                    @if ($row->price == 0)
+                                        <span class="product-price"><strong>Giá: </strong><span class="currency-symbol"> liên hệ</span></span>
+                                    @else 
+                                        <span class="product-price"><strong>{!!number_format($row->price) !!}</strong><span class="currency-symbol"> VND</span></span>    
+                                    @endif
+                                    
                                 </div>
                                 <div class="product-action">
                                     <a href="{!!url('san-pham/'.$row->id.'-'.$row->slug)!!}" class="btn btn-add-to-cart" style="float: right">Chi tiết</a>
@@ -44,6 +49,10 @@ $newProduct = DB::table('products')
                         $productTypes = DB::table('product_types')->get();
                         $categories = DB::table('category')
                                 ->orderBy('category.name', 'desc')
+                                ->where('id','<>','1')
+                                ->where('id','<>','13')
+                                ->where('id','<>','22')
+                                ->where('id','<>','23')
                                 ->get(); 
 
                         ?>
@@ -51,17 +60,28 @@ $newProduct = DB::table('products')
                             <h4>Danh mục sản phẩm</h4>
                             <ul class="filter-categories panel-group">
                                 @foreach($productTypes as $type)
-                                <li class="category-has-children">
-                                    <a href="#{!!$type->slug!!}" data-toggle="collapse">{!!$type->name!!}</a>
-                                    <ul id="{!!$type->slug!!}" class="collapse">
-                                        @foreach($categories as $category)
-                                        <li><a href="{!!url('/san-pham?type='.$type->id.'&hang='.$category->id)!!}">{!!$category->name!!}</a></li>
-                                        @endforeach        
-                                    </ul>
+                                <li class="category">
+                                    <a href="{!!url('/san-pham?type='.$type->id)!!}">
+                                        {!!$type->name!!}
+                                    </a>
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
+
+                        <div class="widget box">
+                            <h4>Hãng sản xuất</h4>
+                            <ul class="filter-categories panel-group">
+                                @foreach($categories as $category)
+                                <li class="category">
+                                    <a href="{!!url('/san-pham?hang='.$category->id)!!}">
+                                        {!!$category->name!!}
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
 
                         <div class="widget box">
                             <h4>Sản phẩm mới</h4>
@@ -75,32 +95,12 @@ $newProduct = DB::table('products')
                                     </div>
                                     <div class="product-content">
                                         <h6 class="product-title"><a href="#">{!!$row->name!!}</a></h6>
-                                        <span class="product-price"><strong>{!!number_format($row->price) !!}</strong><span class="currency-symbol"> VND</span></span>
+                                        @if ($row->price == 0)
+                                        <span class="product-price"><strong>Giá: </strong><span class="currency-symbol"> liên hệ</span></span>
+                                        @else 
+                                            <span class="product-price"><strong>{!!number_format($row->price) !!}</strong><span class="currency-symbol"> VND</span></span>    
+                                        @endif
                                     </div>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                        <div class="widget box">
-                            <h4>Bài viết mới</h4>
-                            <?php 
-                                $data =  DB::table('news')
-                                        ->orderBy('created_at', 'desc')
-                                        ->paginate(5);
-                            ?>
-                            <ul class="recent-posts">
-                                @foreach($data as $row)
-                                <li style="display: flex; padding-top: 15px; padding-bottom: 15px">
-                                    <a href="{!!url('/tin-tuc/'.$row->id.'-'.$row->slug)!!}">
-                                        <div class="recent-image">
-                                            <img style="max-width:none;" src="{!!url('/uploads/news/'.$row->images)!!}" alt="{!!$row->title!!}" width="100" height="100">
-                                        </div>
-                                        <div class="post-content">
-                                            <a class="post-title" href="{!!url('/tin-tuc/'.$row->id.'-'.$row->slug)!!}">{!!$row->title!!}</a>
-                                            <p class="post-meta">Đăng bởi <a href="#">{!!$row->author!!}</a> ngày {!!$row->created_at!!}</p>
-                                        </div>
-                                    </a>     
                                 </li>
                                 @endforeach
                             </ul>

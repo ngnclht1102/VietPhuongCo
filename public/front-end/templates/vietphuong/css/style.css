@@ -188,7 +188,7 @@ html {
 body {
   font: 75%/150% "Open Sans", Arial, Helvetica, sans-serif;
   background-color: #fff;
-  color: #939faa;
+  color: #4f606f;
   overflow-x: hidden !important;
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: scrollbar;
@@ -423,7 +423,8 @@ p.fontsize-lg {
   font-family: Open Sans Condensed; }
 
 .custom-font3, .post-slider.style4 .caption.size-lg, .parallax .caption.size-lg, #header .logo, #nav > ul > li > a, .mobile-nav, .error404 .error-message-404 span, .coming-soon-page .error-message-404 span, .blank-page .error-message-404 span, .coming-soon-page .clock, .page-loading-wrapper header .logo {
-  font-family: Dosis; }
+  font-family: Arial, Helvetica, sans-serif
+  }
 
 /* 1.2. Layout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #page-wrapper {
@@ -704,7 +705,7 @@ blockquote {
       margin-bottom: 30px; }
     blockquote.style1 > .name {
       font-size: 1.3333em;
-      color: #939faa;
+      color: #4f606f;
       margin-bottom: 0; }
   blockquote.style2, blockquote.style3 {
     font-weight: 300;
