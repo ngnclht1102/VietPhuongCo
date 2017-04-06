@@ -1,4 +1,7 @@
 @extends('templates.vietphuong.master-with-title')
+@section('title')
+:: {!!$data->title!!}
+@endsection
 @section('content')
 <?php 
 $items = DB::table('news')

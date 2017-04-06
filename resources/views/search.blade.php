@@ -1,4 +1,7 @@
 @extends('templates.vietphuong.master-with-title')
+@section('title')
+:: Tìm kiếm sản phẩm && bài viết
+@endsection
 @section('content')
 	<div class="container">
                 <div class="row">

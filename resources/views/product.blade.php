@@ -1,4 +1,7 @@
 @extends('templates.vietphuong.master-with-title')
+@section('title')
+:: Sản phẩm
+@endsection
 @section('content')
 <?php 
 $newProduct = DB::table('products')

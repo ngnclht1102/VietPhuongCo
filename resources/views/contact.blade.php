@@ -1,4 +1,7 @@
 @extends('templates.vietphuong.master-with-title')
+@section('title')
+:: Liên hệ
+@endsection
 @section('content')
 <div class="container">
     <ul class="contact-address style2 col-md-9">

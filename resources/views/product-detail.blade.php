@@ -1,4 +1,7 @@
 @extends('templates.vietphuong.master-with-title')
+@section('title')
+:: Chi tiết sản phẩm {!!$data->name!!}
+@endsection
 @section('content')
 <div class="container">
     <div class="row">

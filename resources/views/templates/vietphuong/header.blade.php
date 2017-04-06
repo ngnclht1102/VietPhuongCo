@@ -4,7 +4,7 @@
 <!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
 <head>
     <!-- Page Title -->
-    <title>Công ty Việt Phương</title>
+    <title>Việt Phương @yield('title')</title>
     
     <link rel="icon" href="{!!url('front-end/templates/vietphuong/images/favicon.png')!!}" />
 

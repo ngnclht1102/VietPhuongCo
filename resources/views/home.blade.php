@@ -1,4 +1,7 @@
 @extends('templates.vietphuong.master-with-title')
+@section('title')
+:: Trang chủ
+@endsection
 @section('content')
 
     <div class="section">
