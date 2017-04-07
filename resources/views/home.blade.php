@@ -13,9 +13,9 @@
                     <div class="block row">
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
-                                <div class="icon-container">
+                                <!--<div class="icon-container">
                                     <image src="{!!url('front-end/templates/vietphuong/images/inan.png')!!}" alt="thietbicongnghethongtin" />
-                                </div>
+                                </div>-->
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="{!!url('/san-pham?type=6')!!}">In ấn</a></h4>
                                     <p>Chúng tôi sản xuất giấy in, mực in, và phân phối các loại máy in giấy, máy in bill cỡ nhỏ và công nghiệp.</p>
@@ -24,9 +24,9 @@
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
-                                <div class="icon-container">
+                                <!--<div class="icon-container">
                                     <image src="{!!url('front-end/templates/vietphuong/images/thietbimavach.png')!!}" alt="thietbicongnghethongtin" />
-                                </div>
+                                </div>-->
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="{!!url('/san-pham?type=2')!!}">Thiết bị mã vạch</a></h4>
                                     <p>Chúng tôi cung cấp các thiết bị mã vạch</p>
@@ -35,9 +35,9 @@
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
-                                <div class="icon-container">
+                                <!--<div class="icon-container">
                                     <image src="{!!url('front-end/templates/vietphuong/images/thietbiit.png')!!}" alt="thietbicongnghethongtin" />
-                                </div>
+                                </div>-->
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="{!!url('/san-pham?type=1')!!}">Thiết bị công nghệ thông tin</a></h4>
                                     <p>Chúng tôi cung cấp các thiết bị công nghệ thông tin chất lượng cao với giá thành hợp lý.</p>
@@ -46,9 +46,9 @@
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <div class="icon-box style-boxed-4 box">
-                                <div class="icon-container">
+                                <!--<div class="icon-container">
                                     <image src="{!!url('front-end/templates/vietphuong/images/phanmem.png')!!}" alt="thietbicongnghethongtin" />
-                                </div>
+                                </div>-->
                                 <div class="box-content">
                                     <h4 class="box-title"><a href="{!!url('/san-pham?type=7')!!}">Giải pháp phần mềm</a></h4>
                                     <p>Chúng tôi cung cấp các giải pháp phần mềm kho, tính tiền, siêu thị....</p>
