@@ -3,11 +3,11 @@
                 <div class="container">
                     <div class="row add-clearfix same-height">
                         <div class="col-sm-6 col-md-3">
-                            <h5 class="section-title box">Thông tin công ty</h5>
+                            <h5 class="section-title box">VPCo., LTD</h5>
                             <ul class="useful-links">
-                                <li>Tên công ty: Việt Phương</li>
-                                <li>Địa chỉ: 187/7 Điện Biên Phủ, P. Đa Kao, Quận 1, TP. HCM</li>
-                                <li><a href="tel:84862731585">Điện thoại: (84-8) 6273 1585</a></li>
+                                <li>Công Ty TNHH TMDV SX Việt Phương</li>
+                                <li>187/7 Điện Biên Phủ, P. Đa Kao, Quận 1, TP. HCM</li>
+                                <li><a href="tel:842862731585">Điện thoại: (84-28) 6273 1585</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-3">
@@ -18,7 +18,12 @@
                             <ul class="arrow useful-links">
                                 <li><a href="https://www.zebra.com/ap/en.html">Zebra</a></li>
                                 <li><a href="http://www.godexintl.com/">Godex</a></li>
+                                <li><a href="http://www.intermec.co.uk/">HP</a></li>
                                 <li><a href="http://www.intermec.co.uk/">Intermec</a></li>
+                                <li><a href="http://www3.lenovo.com/">Lenove</a></li>
+                                <li><a href="http://www.dell.com/">Dell</a></li>
+                                <li><a href="http://www.fuma.vn/">Fuma</a></li>
+                                
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-3">

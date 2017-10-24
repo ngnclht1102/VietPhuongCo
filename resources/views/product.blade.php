@@ -72,7 +72,7 @@ $newProduct = DB::table('products')
                             </ul>
                         </div>
 
-                        <div class="widget box">
+                        <!-- <div class="widget box">
                             <h4>Hãng sản xuất</h4>
                             <ul class="filter-categories panel-group">
                                 @foreach($categories as $category)
@@ -83,7 +83,7 @@ $newProduct = DB::table('products')
                                 </li>
                                 @endforeach
                             </ul>
-                        </div>
+                        </div> -->
 
 
                         <div class="widget box">

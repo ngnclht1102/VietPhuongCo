@@ -38,7 +38,9 @@ class NewsController extends Controller
     	$n->source = $rq->txtSource;
     	$n->intro = $rq->txtIntro;
     	$n->full = $rq->txtFull;
-    	$n->cat_id = $rq->sltCate;
+		$n->cat_id = $rq->sltCate;
+		$n->is_pin = $rq->slspin;
+		$n->is_top = $rq->slstop;
     	$n->user_id = Auth::guard('admin')->user()->id;
     	$n->created_at = new datetime;
 
@@ -69,8 +71,9 @@ class NewsController extends Controller
     	$n->full = $rq->txtFull;
     	$n->cat_id = $rq->sltCate;
     	$n->user_id = Auth::guard('admin')->user()->id;
-    	$n->created_at = new datetime;
-
+    	// $n->modified_at = new datetime;
+		$n->is_pin = $rq->slspin;
+		$n->is_top = $rq->slstop;
     	$file_path = public_path('uploads/news/').$n->images;
     	 if ($rq->hasFile('txtimg')) {
             if (file_exists($file_path))

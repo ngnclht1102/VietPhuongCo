@@ -4,7 +4,7 @@
                 <div class="header-inner">
                     <div class="branding">
                         <h1 class="logo">
-                            <a href="/"><img src="images/logo@2x.png" alt="" width="25" height="26">Việt Phương</a>
+                            <a href="/"><img src="images/logo@2x.png" alt="" width="25" height="26"><span style="margin-left: 27px; margin-top: 2px;">Việt Phương</span></a>
                         </h1>
                     </div>
                     <nav id="nav">

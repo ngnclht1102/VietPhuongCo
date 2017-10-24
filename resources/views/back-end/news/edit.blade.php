@@ -72,10 +72,22 @@
 					      			</div>					      		
 					      			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
 					      				Trạng thái : <select name="slstatus" id="inputSlstatus" class="form-control" required="required">
-					      					<option value="1" selected>Hiển thị</option>
-					      					<option value="0">Tạm ẩn</option>
+					      					<option value="1" {!!($data["status"] == 1) ? 'selected' : '' !!}>Hiển thị</option>
+					      					<option value="0" {!!($data["status"] == 0) ? 'selected' : '' !!}>Tạm ẩn</option>
 					      				</select>
 					      			</div>
+									  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+					      				Hiển thị ngoài trang chủ: <select name="slspin"  class="form-control" required="required">
+					      					<option value="1" {!!($data["is_pin"] == 1) ? 'selected' : '' !!}>Hiển thị</option>
+					      					<option value="0" {!!($data["is_pin"] == 0) ? 'selected' : '' !!}>Không</option>
+					      				</select>
+					      			</div>  
+									  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+					      				Giữ trên Top chuyên mục: <select name="slstop" class="form-control" required="required">
+					      					<option value="1"  {!!($data["is_top"] == 1) ? 'selected' : '' !!}>Giữ</option>
+					      					<option value="0"  {!!($data["is_top"] == 0) ? 'selected' : '' !!}>Không</option>
+					      				</select>
+					      			</div>  
 					      			<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
 					      				Nguồn tin : <input type="text" name="txtSource" id="inputtxtSource" value="{!! old('txtSource',isset($data["source"]) ? $data["source"] : null) !!}" class="form-control">
 					      			</div>

@@ -102,6 +102,7 @@ class ProductsController extends Controller
         $pro->tag = $rq->txttag;
         $pro->price = $rq->txtprice;
         $pro->cat_id = $rq->sltCate;
+        $pro->product_type = $rq->sltType;
         $pro->user_id = Auth::guard('admin')->user()->id;
         $pro->updated_at = new datetime;
         $pro->status = '1';

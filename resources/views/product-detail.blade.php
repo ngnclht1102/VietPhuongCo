@@ -78,6 +78,7 @@
                         ->where('id','<>','23')
                         ->get(); 
             ?>
+            
             <div class="widget box">
                 <h4>Danh mục sản phẩm</h4>
                 <ul class="filter-categories panel-group">

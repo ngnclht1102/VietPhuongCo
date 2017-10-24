@@ -6,7 +6,6 @@
 	<div class="container">
                 <div class="row">
                     <div id="main" class="col-sm-8">
-                        
                         <div class="blog-posts">
                         @forelse($all as $row)
                             <article class="post post-full">
@@ -76,10 +75,6 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="box">
-                            <h4>Từ khoá</h4>
-                            @include('modules.tags')
                         </div>
                     </div>
                 </div>

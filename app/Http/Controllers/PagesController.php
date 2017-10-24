@@ -22,8 +22,10 @@ class PagesController extends Controller
     public function index()
     {
         $news =  DB::table('news')
+                    ->where('is_pin', '1')
                     ->orderBy('created_at', 'desc')
-                    ->paginate(6);   
+                    ->where('status','=','1')
+                    ->paginate(12);   
     	return view('home',['news'=>$news]);
     }
     public function addcart($id)
@@ -141,6 +143,7 @@ class PagesController extends Controller
                 $new =  DB::table('news')
                         ->orderBy('created_at', 'desc')
                         ->where('cat_id','=','22')
+                        ->where('status','=','1')
                         ->paginate(5);
                 
                 if($rq->keyword){
@@ -221,10 +224,13 @@ class PagesController extends Controller
             $new =  DB::table('news')
                     ->orderBy('created_at', 'desc')
                     ->where('cat_id','=','22')
+                    ->where('status','=','1')
                     ->paginate(5);
             $all = DB::table('news')
+                   ->orderBy('is_top', 'desc')
                    ->orderBy('created_at', 'desc')
                    ->where('cat_id','=','22')
+                   ->where('status','=','1')
                    ->paginate(10,['*'],'trang');
             return view('new_list',['data'=>$new,'all'=>$all]);
         } elseif ($cat == 'kien-thuc') {
@@ -232,11 +238,14 @@ class PagesController extends Controller
                     ->orderBy('created_at', 'desc')
                     ->where('cat_id','=','23')
                     ->where('id','<>','26')
+                    ->where('status','=','1')
                     ->paginate(5);
             $all = DB::table('news')
+                   ->orderBy('is_top', 'desc')
                    ->orderBy('created_at', 'desc')
                    ->where('cat_id','=','23')
                    ->where('id','<>','26')
+                   ->where('status','=','1')
                    ->paginate(10,['*'],'trang');
             return view('new_list',['data'=>$new,'all'=>$all]);
         } 
