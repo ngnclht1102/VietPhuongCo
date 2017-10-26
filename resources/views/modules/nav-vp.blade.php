@@ -1,4 +1,21 @@
 
+<?php
+                $newPT = array(); 
+                $productTypes = (array) DB::table('product_types')->where('parent_id',0)->get();
+
+                foreach ($productTypes as $key => $type) {
+                    $tmp = (array) $type;
+                    $tmp['parents'] = (array) DB::table('product_types')->where('parent_id', $type->id)->get();
+                    $newPT[] = (array)$tmp;
+                }
+                $categories = DB::table('category')
+                        ->orderBy('category.name', 'desc')
+                        ->where('id','<>','1')
+                        ->where('id','<>','13')
+                        ->where('id','<>','22')
+                        ->where('id','<>','23')
+                        ->get(); 
+            ?>
 <header id="header" class="header-color-white">
             <div class="container">
                 <div class="header-inner">
@@ -28,8 +45,23 @@
                             <li id="main-nav-trangchu" class="menu-item {{(Request::path() == '/' || Request::path() == 'trang-chu') ? 'active' : '' }}">
                                 <a href="{{url('/trang-chu')}}">Trang chủ</a>
                             </li>
-                            <li id="main-nav-sanpham" class="menu-item {{(Request::path() == 'san-pham') ? 'active' : '' }}">
+                            <li id="main-nav-sanpham" class="menu-item-has-children {{(Request::path() == 'san-pham') ? 'active' : '' }}">
                                 <a href="{{url('/san-pham')}}">Sản phẩm</a>
+                                
+                                <ul class="sub-nav">
+                                    @foreach($newPT as $type)
+                                    <li class="menu-item-has-children">
+                                        <a href="#">{!!$type['name']!!}</a>
+                                        @if(count($type['parents']) > 0) 
+                                        <ul class="sub-nav">
+                                            @foreach($type['parents'] as $miniType)
+                                            <li><a href="{!!url('/san-pham?type='.$miniType->id)!!}">{!! $miniType->name !!}</a></li>
+                                            @endforeach
+                                        </ul>
+                                        @endif
+                                    </li>
+                                    @endforeach
+                                 </ul>   
                             </li>
                             <li id="main-nav-giaiphap" class="menu-item {{(Request::path() == 'giai-phap') ? 'active' : '' }}">
                                 <a href="{{url('/giai-phap')}}">Giải pháp</a>

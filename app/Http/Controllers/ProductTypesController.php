@@ -17,8 +17,15 @@ class ProductTypesController extends Controller
    }
    public function getedit($id)
    {
-   		$data = ProductType::where('id',$id)->first();
-   		return view('back-end.product_types.edit',['data'=>$data]);
+           $data = ProductType::where('id',$id)->first();
+           try{
+            $parent = ProductType::where('id',$data->parent_id)->first();
+           } catch(Exception $e) {
+               echo '';
+           }
+
+           
+   		return view('back-end.product_types.edit',['data'=>$data, 'parent' => $parent]);
    }
 
    public function postedit($id, ProductsTypeRequest $rq)
@@ -26,6 +33,7 @@ class ProductTypesController extends Controller
    		$data = ProductType::find($id);
         $data->name = $rq->txtName;
         $data->slug = str_slug($rq->txtName,'-');
+        $data->parent_id = $rq->sltParent;
         $data->save(); 
     return redirect('admin/product_types')
          	->with(['flash_level'=>'result_msg','flash_massage'=>'Đã sửa kiểu sản phẩm thành công']);
@@ -40,6 +48,7 @@ class ProductTypesController extends Controller
    {
    		$data = new ProductType();
         $data->name = $rq->txtName;
+        $data->parent_id = $rq->sltParent;
         $data->slug = str_slug($rq->txtName,'-');
         $data->save(); 
     return redirect('admin/product_types')

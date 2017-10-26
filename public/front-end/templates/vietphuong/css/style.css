@@ -3358,7 +3358,7 @@ ul.filter-categories > li {
     #nav .btn-cart-view-hover-style .fa, #nav .mini-cart .cart-content .btn-view-cart:hover .fa {
       color: inherit; }
   #nav li.menu-item-has-children > .sub-nav {
-    background: rgba(255, 255, 255, 0.9); }
+    background: rgba(255, 255, 255, 1); }
   #nav > ul > li.menu-item-has-children:hover > a {
     color: #000;
     background: rgba(255, 255, 255, 0.9); }

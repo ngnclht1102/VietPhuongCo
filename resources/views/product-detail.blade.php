@@ -68,8 +68,15 @@
         </div>
 
         <div class="sidebar col-sm-4 col-md-3">
-            <?php 
-                $productTypes = DB::table('product_types')->get();
+            <?php
+                $newPT = array(); 
+                $productTypes = (array) DB::table('product_types')->where('parent_id',0)->get();
+
+                foreach ($productTypes as $key => $type) {
+                    $tmp = (array) $type;
+                    $tmp['parents'] = (array) DB::table('product_types')->where('parent_id', $type->id)->get();
+                    $newPT[] = (array)$tmp;
+                }
                 $categories = DB::table('category')
                         ->orderBy('category.name', 'desc')
                         ->where('id','<>','1')
@@ -82,11 +89,14 @@
             <div class="widget box">
                 <h4>Danh mục sản phẩm</h4>
                 <ul class="filter-categories panel-group">
-                    @foreach($productTypes as $type)
+                    @foreach($newPT as $type)
                     <li class="category">
-                        <a href="{!!url('/san-pham?type='.$type->id)!!}">
-                            {!!$type->name!!}
-                        </a>
+                    <a href="#{!!$type['slug']!!}" class="collapsed" data-toggle="collapse">{!!$type['name']!!}</a>
+                        <ul id="{!!$type['slug']!!}" class="collapse in">
+                            @foreach($type['parents'] as $miniType)
+                            <li><a href="{!!url('/san-pham?type='.$miniType->id)!!}">{!! $miniType->name !!}</a></li>
+                            @endforeach
+                        </ul>
                     </li>
                     @endforeach
                 </ul>
