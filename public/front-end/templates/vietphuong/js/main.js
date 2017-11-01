@@ -700,6 +700,7 @@ function initPostFullContentHeight() {
                 if (typeof transitionStyle == "undefined") {
                     transitionStyle = false;
                 }
+                transitionStyle = 'slide';
                 var items = $(this).data("items")
                     ,isSingleItem = true;
                 if (typeof items == "undefined") {
@@ -714,8 +715,9 @@ function initPostFullContentHeight() {
                 var options = {
                     items: items,
                     singleItem: isSingleItem,
-                    slideSpeed: 700,
-                    autoPlay: 5000,
+                    slideSpeed: 500,
+                    autoPlay: 1000,
+                    loop: true,
                     navigation: true,
                     navigationText: false,
                     pagination: true,

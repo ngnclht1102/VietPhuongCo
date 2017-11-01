@@ -44,6 +44,9 @@
     
     <!-- Responsive Styles -->
     <link rel="stylesheet" href="{!!url('front-end/templates/vietphuong/css/responsive.css')!!}">
+
+    <link rel="stylesheet" href="{!!url('front-end/templates/vietphuong/css/nivo-slider.css')!!}">
+    
     <!-- CSS for IE -->
     <!--[if lte IE 9]>
         <link rel="stylesheet" type="text/css" href="{!!url('front-end/templates/vietphuong/css/ie.css')!!}" />

@@ -90,9 +90,26 @@ Chúng tôi cam kết đưa lại sự tiện nghi tốt nhất cho khách hàng
     <!-- plugins -->
     <script type="text/javascript" src="{!!url('front-end/templates/vietphuong/js/jquery.plugins.js')!!}"></script>
 
+    
+
+    <script type="text/javascript" src="{!!url('front-end/templates/vietphuong/js/revolution-slider.js')!!}"></script>
+
     <!-- load page Javascript -->
     <script type="text/javascript" src="{!!url('front-end/templates/vietphuong/js/main.js')!!}"></script>
 
-    <script type="text/javascript" src="{!!url('front-end/templates/vietphuong/js/revolution-slider.js')!!}"></script>
+    <script type="text/javascript" src="{!!url('front-end/templates/vietphuong/js/nivo.slider.js')!!}"></script>
+
+    
+
+    <script>
+            jQuery(document).ready(function(){
+                jQuery('#slider').nivoSlider({
+                    effect: 'random',
+                    animSpeed: 500,
+                    pauseTime: 3000,
+                    controlNav: false,
+                }); 
+            });
+        </script>    
 </body>
 </html>

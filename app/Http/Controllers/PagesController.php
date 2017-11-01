@@ -204,11 +204,32 @@ class PagesController extends Controller
                     ->paginate(12);
                 }else
                 if($rq->type) {
-                    $products = DB::table('products')
-                    ->join('category', 'products.cat_id', '=', 'category.id')
-                    ->where('product_type','=',$rq->type)
-                    ->select('products.*')
-                    ->paginate(12);
+                    
+                        
+                    $type =  current(DB::table('product_types')->where('id', $rq->type)->get());
+
+                    if($type->parent_id == 0 ) {
+                        $products = [];
+                        $idList = array(
+                            0 => $type->id,
+                        );
+                        $children =  DB::table('product_types')->where('parent_id', $type->id)->get();
+                        foreach ($children as $key => $child) {
+                            $idList[] = $child->id;
+                        }
+                        
+                        $products = DB::table('products')
+                        ->join('category', 'products.cat_id', '=', 'category.id')
+                        ->whereIn('product_type',$idList)
+                        ->select('products.*')
+                        ->paginate(12);
+                    } else {
+                        $products = DB::table('products')
+                        ->join('category', 'products.cat_id', '=', 'category.id')
+                        ->where('product_type','=',$rq->type)
+                        ->select('products.*')
+                        ->paginate(12);
+                    }
                 }
             } else {
                 $products = DB::table('products')

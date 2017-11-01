@@ -51,7 +51,7 @@
                                 <ul class="sub-nav">
                                     @foreach($newPT as $type)
                                     <li class="menu-item-has-children">
-                                        <a href="#">{!!$type['name']!!}</a>
+                                        <a href="{!!url('/san-pham?type='.$type['id'])!!}">{!!$type['name']!!}</a>
                                         @if(count($type['parents']) > 0) 
                                         <ul class="sub-nav">
                                             @foreach($type['parents'] as $miniType)
